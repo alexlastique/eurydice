@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8k0xbmvw187p"]
+
+[ext_resource type="PackedScene" uid="uid://chrsmf1jexlgs" path="res://scene/wall.tscn" id="1_pveb2"]
+[ext_resource type="PackedScene" uid="uid://ckdy38rpoxt6q" path="res://scene/player.tscn" id="2_kkxip"]
+
+[node name="Game" type="Node2D"]
+
+[node name="wall" parent="." instance=ExtResource("1_pveb2")]
+disable_mode = 2
+collision_mask = 2
+
+[node name="player" parent="." instance=ExtResource("2_kkxip")]
+disable_mode = 2
+collision_layer = 2

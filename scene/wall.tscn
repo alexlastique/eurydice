@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://chrsmf1jexlgs"]
+
+[ext_resource type="Texture2D" uid="uid://c2wihb0yb8mni" path="res://img/cat0.bmp" id="1_dnqap"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6kv5g"]
+size = Vector2(1656, 20)
+
+[node name="wall" type="Area2D"]
+position = Vector2(1088, 352)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-124, 0)
+shape = SubResource("RectangleShape2D_6kv5g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 2
+texture_repeat = 2
+position = Vector2(-124, 9.53674e-07)
+scale = Vector2(51.75, 0.5)
+texture = ExtResource("1_dnqap")
