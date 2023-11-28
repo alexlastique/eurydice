@@ -1,39 +1,25 @@
-extends Area2D
-signal hit
+extends CharacterBody2D
 
-@export var speed = 1000
-var screen_size
-var col = 0
 
-func _ready():
-	hide()
+const SPEED = 300.0
 
-func _process(delta):
-	screen_size=get_viewport_rect().size
-	var vel = Vector2.ZERO
-	if Input.is_action_pressed("ui_right"):
-		vel.x +=1
-	if Input.is_action_pressed("ui_left"):
-		vel.x -=1
-	if Input.is_action_pressed("ui_down"):
-		vel.y +=1
-	if Input.is_action_pressed("ui_up"):
-		vel.y -=1
-	if vel.length()>0:
-		vel = vel.normalized()*speed;
-		$AnimatedSprite2D.play()
+
+
+func _physics_process(delta):
+
+	# Handle Jump.
+	var directiony = Input.get_axis("ui_up", "ui_down")
+	if directiony:
+		velocity.y = directiony * SPEED
 	else:
-		$AnimatedSprite2D.stop() 
-	position+=vel*delta
-	position = position.clamp(Vector2.ZERO,screen_size)
+		velocity.y = move_toward(velocity.y, 0, SPEED)
 
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction = Input.get_axis("ui_left", "ui_right")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-func _on_body_entered(body):
-	hide()
-	hit.emit()
-	$CollisionShape2D.set_deferred("disabled",true)
-
-func start(pos):
-	position = pos
-	show()
-	$CollisionShape2D.disabled = false
+	move_and_slide()
