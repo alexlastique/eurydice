@@ -1,16 +1,17 @@
 extends Area2D
 
 
-const SPEED = 1
+const SPEED = 20
 var vecx =Vector2().x
 var vecy =Vector2().y
 var screen_size
 var last_delta=0
 var new_delta=0
+var col =false
+var last_direction=""
 
 func _ready():
-	var mob_types = $AnimatedSprite2D.sprite_frames.get_animation_names()
-	$AnimatedSprite2D.play(mob_types[randi() % mob_types.size()])
+	$AnimatedSprite2D2.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,25 +22,39 @@ func _physics_process(delta):
 	screen_size = get_viewport_rect().size
 	var directiony = randi_range(1,4)
 	new_delta+=delta
-	if last_delta+0.1<new_delta:
+	if last_delta+0.1<new_delta and col==false:
 		if directiony==1 and vecx<screen_size[0]:
 			position =Vector2((vecx+1)*SPEED,vecy*SPEED)
 			vecx+=1
+			last_direction = "vecx+=1"
 		elif directiony==2 and vecx>0:
 			position =Vector2((vecx-1)*SPEED,vecy*SPEED)
 			vecx-=1
+			last_direction = "vecx-=1"
 		elif directiony==3 and vecx<screen_size[0]:
 			position =Vector2(vecx*SPEED,(vecy+1)*SPEED)
 			vecy+=1
+			last_direction = "vecy+=1"
 		elif vecy>0:
 			position =Vector2(vecx*SPEED,(vecy-1)*SPEED)
 			vecy-=1
+			last_direction = "vecy-=1"
 		last_delta=new_delta
-		
-	
 
 
 
 
-func _on_area_2d_body_entered(body):
-	print(body)
+func _on_body_entered(body):
+	if body.name=="player":
+		print(get_groups()[0])
+	else:
+		if last_direction == "vecx+=1":
+			vecx-=2
+		if last_direction == "vecx-=1":
+			vecx+=2
+		if last_direction == "vecy+=1":
+			vecy-=2
+		if last_direction == "vecy-=1":
+			vecy+=2
+
+

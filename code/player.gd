@@ -7,8 +7,7 @@ var screen_size
 
 
 func _ready():
-	var mob_types = $AnimatedSprite2D.sprite_frames.get_animation_names()
-	$AnimatedSprite2D.play(mob_types[randi() % mob_types.size()])
+	$AnimatedSprite2D.play()
 
 func _physics_process(delta):
 	screen_size = get_viewport_rect().size
