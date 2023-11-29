@@ -1,12 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8k0xbmvw187p"]
+[gd_scene load_steps=5 format=3 uid="uid://c8k0xbmvw187p"]
 
+[ext_resource type="Script" path="res://code/game.gd" id="1_ewow4"]
 [ext_resource type="PackedScene" uid="uid://chrsmf1jexlgs" path="res://scene/wall.tscn" id="1_pveb2"]
 [ext_resource type="PackedScene" uid="uid://ckdy38rpoxt6q" path="res://scene/player.tscn" id="2_kkxip"]
+[ext_resource type="PackedScene" uid="uid://cpc360psqyn8l" path="res://scene/mob.tscn" id="3_o0ji7"]
 
-[node name="Game" type="Node2D"]
-
-[node name="wall" parent="." instance=ExtResource("1_pveb2")]
-disable_mode = 2
+[node name="Node" type="Node"]
+script = ExtResource("1_ewow4")
 
 [node name="player" parent="." instance=ExtResource("2_kkxip")]
+position = Vector2(477, 226)
 disable_mode = 2
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(99, 101)
+offset = Vector2(2.08165e-12, 2.08165e-12)
+zoom = Vector2(2, 2)
+
+[node name="mob" parent="." instance=ExtResource("3_o0ji7")]
+position = Vector2(739, 234)
+collision_mask = 3
+
+[node name="wall" parent="." instance=ExtResource("1_pveb2")]

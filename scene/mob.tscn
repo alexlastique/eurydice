@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpc360psqyn8l"]
+
+[ext_resource type="Script" path="res://code/mob.gd" id="1_nbw4p"]
+[ext_resource type="Texture2D" uid="uid://duqnrff1gvlpq" path="res://img/cat1.bmp" id="2_10nxd"]
+[ext_resource type="Texture2D" uid="uid://c2wihb0yb8mni" path="res://img/cat0.bmp" id="3_asoja"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrlhe"]
+size = Vector2(176, 174)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c3gyd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_10nxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_asoja")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_nbw4p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(69, 69)
+shape = SubResource("RectangleShape2D_qrlhe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(68, 68)
+scale = Vector2(5.25, 5.25)
+sprite_frames = SubResource("SpriteFrames_c3gyd")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
