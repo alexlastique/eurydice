@@ -7,8 +7,7 @@ var screen_size
 
 
 func _ready():
-	var mob_types = $AnimatedSprite2D.sprite_frames.get_animation_names()
-	$AnimatedSprite2D.play(mob_types[randi() % mob_types.size()])
+	$AnimatedSprite2D.play()
 
 func _physics_process(delta):
 	screen_size = get_viewport_rect().size
@@ -29,5 +28,8 @@ func _physics_process(delta):
 	new_position.y = clamp(new_position.y, 0, screen_size.y-200)
 	
 	position = new_position
+	
+	var player_positions = get_node("/root/Game")
+	player_positions.positions = new_position
 
 	move_and_slide()

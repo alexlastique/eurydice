@@ -19,27 +19,26 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 	
 func _physics_process(delta):
 	screen_size = get_viewport_rect().size
+	var player_vars = get_node("/root/Game")
 	var directiony = randi_range(1,4)
 	new_delta+=delta
-	if last_delta+0.1<new_delta:
-		if directiony==1 and vecx<screen_size[0]:
+	if true:
+		if player_vars.positions.x > position.x :
 			position =Vector2((vecx+1)*SPEED,vecy*SPEED)
 			vecx+=1
-		elif directiony==2 and vecx>0:
+
+		if player_vars.positions.x < position.x:
 			position =Vector2((vecx-1)*SPEED,vecy*SPEED)
 			vecx-=1
-		elif directiony==3 and vecx<screen_size[0]:
+
+		if player_vars.positions.y > position.y :
 			position =Vector2(vecx*SPEED,(vecy+1)*SPEED)
 			vecy+=1
-		elif vecy>0:
+		if player_vars.positions.y < position.y:
 			position =Vector2(vecx*SPEED,(vecy-1)*SPEED)
 			vecy-=1
 		last_delta=new_delta
-		
-	
-
-
-
+	#print("true")
 
 func _on_area_2d_body_entered(body):
 	print(body)
