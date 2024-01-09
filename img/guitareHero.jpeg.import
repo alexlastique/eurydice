@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8juviuhtht13"
-path="res://.godot/imported/cat3.bmp-8d04a58c2f0aeff4c982afeb5586c656.ctex"
+uid="uid://csvj0gbirr8xs"
+path="res://.godot/imported/guitareHero.jpeg-a71fc346a9e5ebcedde820d219af89de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/cat3.bmp"
-dest_files=["res://.godot/imported/cat3.bmp-8d04a58c2f0aeff4c982afeb5586c656.ctex"]
+source_file="res://img/guitareHero.jpeg"
+dest_files=["res://.godot/imported/guitareHero.jpeg-a71fc346a9e5ebcedde820d219af89de.ctex"]
 
 [params]
 

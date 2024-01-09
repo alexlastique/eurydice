@@ -1,17 +1,22 @@
 extends Area2D
 
 
-const SPEED = 20
-var vecx =Vector2().x
-var vecy =Vector2().y
-var screen_size
+const SPEED = 1
+var vecx
+var vecy
 var last_delta=0
 var new_delta=0
 var col =false
 var last_direction=""
+var My_group
 
 func _ready():
 	$AnimatedSprite2D2.play()
+	var screen_size = get_viewport_rect().size
+	#mob spawn dans les murs
+	vecx =randi_range(0,screen_size.x)
+	vecy =randi_range(0,screen_size.y)
+	My_group=get_groups()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,34 +24,38 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
 	
 func _physics_process(delta):
-	screen_size = get_viewport_rect().size
-	var directiony = randi_range(1,4)
+	var player_vars=get_node("/root/Game")
 	new_delta+=delta
-	if last_delta+0.1<new_delta and col==false:
-		if directiony==1 and vecx<screen_size[0]:
+	if is_in_group(My_group[0]):
+		if player_vars.positions.x > position.x :
 			position =Vector2((vecx+1)*SPEED,vecy*SPEED)
 			vecx+=1
 			last_direction = "vecx+=1"
-		elif directiony==2 and vecx>0:
+
+		if player_vars.positions.x < position.x:
 			position =Vector2((vecx-1)*SPEED,vecy*SPEED)
 			vecx-=1
 			last_direction = "vecx-=1"
-		elif directiony==3 and vecx<screen_size[0]:
+
+		if player_vars.positions.y > position.y :
 			position =Vector2(vecx*SPEED,(vecy+1)*SPEED)
 			vecy+=1
 			last_direction = "vecy+=1"
-		elif vecy>0:
+
+		if player_vars.positions.y < position.y:
 			position =Vector2(vecx*SPEED,(vecy-1)*SPEED)
 			vecy-=1
 			last_direction = "vecy-=1"
+
 		last_delta=new_delta
-
-
-
+	else:
+		hide()
 
 func _on_body_entered(body):
-	if body.name=="player":
-		print(get_groups()[0])
+	var Scene_var=get_node("/root/Game")
+	if body.name=="player" and is_in_group(My_group[0]):
+		Scene_var.scene="combat"
+		remove_from_group(My_group[0])
 	else:
 		if last_direction == "vecx+=1":
 			vecx-=2
@@ -56,5 +65,3 @@ func _on_body_entered(body):
 			vecy-=2
 		if last_direction == "vecy-=1":
 			vecy+=2
-
-

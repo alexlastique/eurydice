@@ -1,17 +1,38 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckdy38rpoxt6q"]
+[gd_scene load_steps=9 format=3 uid="uid://ckdy38rpoxt6q"]
 
 [ext_resource type="Script" path="res://code/player.gd" id="1_3whyy"]
-[ext_resource type="Texture2D" uid="uid://7b4y4bts8ueg" path="res://img/cat2.bmp" id="1_cpec2"]
-[ext_resource type="Texture2D" uid="uid://8juviuhtht13" path="res://img/cat3.bmp" id="2_sj2my"]
+[ext_resource type="Texture2D" uid="uid://b8wmhf07d2wjo" path="res://img/player.png" id="2_wpitw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_db5gj"]
+atlas = ExtResource("2_wpitw")
+region = Rect2(0, 0, 32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxm6g"]
+atlas = ExtResource("2_wpitw")
+region = Rect2(32, 0, 32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_punae"]
+atlas = ExtResource("2_wpitw")
+region = Rect2(64, 0, 32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ub88r"]
+atlas = ExtResource("2_wpitw")
+region = Rect2(96, 0, 32, 31)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jvnqd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_cpec2")
+"texture": SubResource("AtlasTexture_db5gj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_sj2my")
+"texture": SubResource("AtlasTexture_rxm6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_punae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ub88r")
 }],
 "loop": true,
 "name": &"walk",
@@ -19,7 +40,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhywo"]
-size = Vector2(232, 224)
+size = Vector2(167, 218)
 
 [node name="player" type="CharacterBody2D"]
 position = Vector2(96, 40)
@@ -28,11 +49,12 @@ metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(100, 96)
+position = Vector2(100, 100)
 scale = Vector2(7.25, 7)
 sprite_frames = SubResource("SpriteFrames_jvnqd")
 animation = &"walk"
+frame_progress = 0.335004
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(100, 96)
+position = Vector2(118.5, 100)
 shape = SubResource("RectangleShape2D_vhywo")
