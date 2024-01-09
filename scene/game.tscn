@@ -433,7 +433,7 @@ script = ExtResource("1_ewow4")
 
 [node name="player" parent="." instance=ExtResource("2_kkxip")]
 z_index = 1
-position = Vector2(473, 87)
+position = Vector2(960, 284)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(99, 101)
@@ -462,6 +462,7 @@ offset_bottom = 40.0
 theme = SubResource("Theme_pxn0r")
 
 [node name="piece" type="Label" parent="player/AnimatedSprite2D2/Control"]
+layout_mode = 0
 offset_left = 10.5432
 offset_top = -5.89474
 offset_right = 20.5432

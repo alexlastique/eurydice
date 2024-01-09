@@ -1,7 +1,7 @@
 extends Area2D
 
 
-const SPEED = 1
+var SPEED = 1
 var vecx
 var vecy
 var last_delta=0
@@ -25,24 +25,31 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 	
 func _physics_process(delta):
 	var player_vars=get_node("/root/Game")
+	var Scene_var=get_node("/root/Game")
 	new_delta+=delta
+	if Scene_var.scene=="combat":
+		SPEED = 0
+		print(1)
+	else:
+		SPEED = 1
+		print(2)
 	if is_in_group(My_group[0]):
-		if player_vars.positions.x > position.x :
+		if player_vars.positions.x > position.x and SPEED > 0:
 			position =Vector2((vecx+1)*SPEED,vecy*SPEED)
 			vecx+=1
 			last_direction = "vecx+=1"
 
-		if player_vars.positions.x < position.x:
+		if player_vars.positions.x < position.x and SPEED > 0:
 			position =Vector2((vecx-1)*SPEED,vecy*SPEED)
 			vecx-=1
 			last_direction = "vecx-=1"
 
-		if player_vars.positions.y > position.y :
+		if player_vars.positions.y > position.y and SPEED > 0:
 			position =Vector2(vecx*SPEED,(vecy+1)*SPEED)
 			vecy+=1
 			last_direction = "vecy+=1"
 
-		if player_vars.positions.y < position.y:
+		if player_vars.positions.y < position.y and SPEED > 0:
 			position =Vector2(vecx*SPEED,(vecy-1)*SPEED)
 			vecy-=1
 			last_direction = "vecy-=1"
