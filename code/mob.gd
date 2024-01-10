@@ -29,10 +29,8 @@ func _physics_process(delta):
 	new_delta+=delta
 	if Scene_var.scene=="combat":
 		SPEED = 0
-		print(1)
 	else:
 		SPEED = 1
-		print(2)
 	if is_in_group(My_group[0]):
 		if player_vars.positions.x > position.x and SPEED > 0:
 			position =Vector2((vecx+1)*SPEED,vecy*SPEED)
