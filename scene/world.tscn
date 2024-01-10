@@ -1,12 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://b7ypdfj1il8jr"]
+[gd_scene load_steps=21 format=3 uid="uid://b43cg5y38knwk"]
 
 [ext_resource type="PackedScene" uid="uid://xukq7ooyyiaw" path="res://player/player.tscn" id="1_v4jwo"]
 [ext_resource type="Texture2D" uid="uid://cx13ajm00k52u" path="res://images/objets.png" id="1_wt7bb"]
-[ext_resource type="Theme" uid="uid://4hhnvn3n6v2f" path="res://theme.tres" id="2_0ebql"]
+[ext_resource type="Theme" uid="uid://clc5h0mnm64a4" path="res://theme.tres" id="2_0ebql"]
 [ext_resource type="Texture2D" uid="uid://q5yxix53y6xc" path="res://images/terrain-map-v7.png" id="3_fp1fp"]
 [ext_resource type="Texture2D" uid="uid://dxwhgu74v6ebf" path="res://images/terrain-v7.png" id="4_tag14"]
 [ext_resource type="Script" path="res://camera/FollowingCamera.gd" id="5_35lbm"]
 [ext_resource type="Texture2D" uid="uid://b2oajt8f4m62k" path="res://images/lava animation.png" id="5_irj3c"]
+[ext_resource type="Texture2D" uid="uid://cjq36fhl5hvii" path="res://images/piece.png" id="8_csd8u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wxcyt"]
 texture = ExtResource("1_wt7bb")
@@ -8150,6 +8151,56 @@ sources/2 = SubResource("TileSetAtlasSource_duein")
 sources/3 = SubResource("TileSetAtlasSource_4gls0")
 sources/0 = SubResource("TileSetAtlasSource_wxcyt")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_boi4p"]
+atlas = ExtResource("8_csd8u")
+region = Rect2(0, 0, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a411o"]
+atlas = ExtResource("8_csd8u")
+region = Rect2(14, 0, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6xcr"]
+atlas = ExtResource("8_csd8u")
+region = Rect2(28, 0, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjkym"]
+atlas = ExtResource("8_csd8u")
+region = Rect2(42, 0, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rers7"]
+atlas = ExtResource("8_csd8u")
+region = Rect2(56, 0, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_no02s"]
+atlas = ExtResource("8_csd8u")
+region = Rect2(70, 0, 14, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4j336"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_boi4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a411o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6xcr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjkym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rers7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_no02s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="world" type="Node2D"]
 z_index = 1
 y_sort_enabled = true
@@ -8180,7 +8231,6 @@ layer_2/tile_data = PackedInt32Array(2621446, 393216, 8, 2818057, 393216, 8, 124
 [node name="Player" parent="." instance=ExtResource("1_v4jwo")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(502, 91)
 
 [node name="FollowingCamera" type="Camera2D" parent="Player" node_paths=PackedStringArray("tilemap")]
 position = Vector2(1, 0)
@@ -8196,3 +8246,10 @@ offset_right = 304.0
 offset_bottom = 27.0
 theme = ExtResource("2_0ebql")
 value = 9.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Interface"]
+texture_filter = 1
+position = Vector2(17.5, 51.5)
+scale = Vector2(1.92857, 1.92857)
+sprite_frames = SubResource("SpriteFrames_4j336")
+frame_progress = 0.600503
