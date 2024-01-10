@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bxondy6jtl1kg"]
+[gd_scene load_steps=8 format=3 uid="uid://dgt433cpxhvq6"]
 
 [ext_resource type="Texture2D" uid="uid://dptr71j08q7qj" path="res://img/menu.png" id="1_gdcda"]
 [ext_resource type="FontFile" uid="uid://05pmt2v75myi" path="res://police/PixelGameFont.ttf" id="1_iic5l"]

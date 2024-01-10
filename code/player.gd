@@ -17,7 +17,7 @@ func _physics_process(delta):
 	var player_positions = get_node("/root/Game")
 	screen_size = get_viewport_rect().size
 
-	if player_positions.scene!="combat":
+	if player_positions.scene != "pause" and player_positions.scene != "combat":
 		if player_positions.positions != position:
 			position = player_positions.positions
 

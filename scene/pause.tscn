@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyho7a2008s4w"]
+
+[ext_resource type="Texture2D" uid="uid://dptr71j08q7qj" path="res://img/menu.png" id="1_jk1o1"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1157.0
+offset_bottom = 655.0
+color = Color(0, 0, 0, 0.65098)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.65098)
+position = Vector2(232, 0)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("1_jk1o1")
+centered = false
+
+[node name="retourJeu" type="Button" parent="."]
+offset_left = 545.0
+offset_top = 247.0
+offset_right = 603.0
+offset_bottom = 278.0
+text = "retour
+"
+
+[node name="option" type="Button" parent="."]
+offset_left = 546.0
+offset_top = 299.0
+offset_right = 605.0
+offset_bottom = 330.0
+text = "option
+"
+
+[node name="exit" type="Button" parent="."]
+offset_left = 557.0
+offset_top = 355.0
+offset_right = 594.0
+offset_bottom = 386.0
+text = "exit
+"

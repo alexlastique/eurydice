@@ -1,13 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://b138jwvo3pqy8"]
+[gd_scene load_steps=5 format=3 uid="uid://b138jwvo3pqy8"]
 
 [ext_resource type="Script" path="res://code/main.gd" id="1_hl0i4"]
 [ext_resource type="PackedScene" uid="uid://c8k0xbmvw187p" path="res://scene/game.tscn" id="1_lilsr"]
 [ext_resource type="PackedScene" uid="uid://bmsw2a0tu65or" path="res://scene/combat.tscn" id="2_hsbw8"]
+[ext_resource type="PackedScene" uid="uid://cyho7a2008s4w" path="res://scene/pause.tscn" id="2_nu0h8"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_hl0i4")
 
 [node name="Node" parent="." instance=ExtResource("1_lilsr")]
-position = Vector2(-6, 20)
+position = Vector2(6, 4)
+scale = Vector2(1, 1)
 
 [node name="Node2D" parent="." instance=ExtResource("2_hsbw8")]
+
+[node name="Node2D2" parent="." instance=ExtResource("2_nu0h8")]
+z_index = 2
+position = Vector2(-1, 1)

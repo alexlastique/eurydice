@@ -10,17 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://csa4ny4pnhtjq" path="res://img/DinoSprites_-_doux.png" id="5_scfoc"]
 [ext_resource type="Script" path="res://code/piece.gd" id="6_5kvf0"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_756cr"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0b4tl"]
-bg_color = Color(0, 0.729412, 0.0509804, 1)
-
-[sub_resource type="Theme" id="Theme_ra7cj"]
-ProgressBar/colors/font_color = Color(0, 0, 0, 1)
-ProgressBar/fonts/font = ExtResource("3_bei2u")
-ProgressBar/styles/background = SubResource("StyleBoxFlat_756cr")
-ProgressBar/styles/fill = SubResource("StyleBoxFlat_0b4tl")
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ohyd4"]
 atlas = ExtResource("3_cutxd")
 region = Rect2(0, 0, 14, 14)
@@ -70,6 +59,17 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_756cr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0b4tl"]
+bg_color = Color(0, 0.729412, 0.0509804, 1)
+
+[sub_resource type="Theme" id="Theme_ra7cj"]
+ProgressBar/colors/font_color = Color(0, 0, 0, 1)
+ProgressBar/fonts/font = ExtResource("3_bei2u")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_756cr")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_0b4tl")
 
 [sub_resource type="Theme" id="Theme_pxn0r"]
 default_font = ExtResource("3_bei2u")
@@ -427,51 +427,57 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(191, 159)
+scale = Vector2(0.715, 0.715)
 script = ExtResource("1_ewow4")
 
 [node name="wall" parent="." instance=ExtResource("1_pveb2")]
 
 [node name="player" parent="." instance=ExtResource("2_kkxip")]
 z_index = 1
-position = Vector2(960, 284)
+position = Vector2(395.804, -173.427)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="player"]
+texture_filter = 1
+position = Vector2(-408.5, -117.5)
+scale = Vector2(4.07143, -3.78571)
+sprite_frames = SubResource("SpriteFrames_lp0xx")
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(99, 101)
 offset = Vector2(2.08165e-12, 2.08165e-12)
+limit_left = -1430
+limit_top = -1030
 
 [node name="ProgressBar" type="ProgressBar" parent="player"]
-offset_left = -462.0
-offset_top = -205.0
-offset_right = -37.0
-offset_bottom = -165.0
+offset_left = -441.0
+offset_top = -201.0
+offset_right = -16.0
+offset_bottom = -161.0
 theme = SubResource("Theme_ra7cj")
 step = 1.0
 value = 79.0
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="player"]
-texture_filter = 1
-position = Vector2(-436, -133)
-scale = Vector2(2.89286, 2.71429)
-sprite_frames = SubResource("SpriteFrames_lp0xx")
-
-[node name="Control" type="Control" parent="player/AnimatedSprite2D2"]
+[node name="Control" type="Control" parent="player"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -317.0
+offset_top = 83.0
+offset_right = -277.0
+offset_bottom = 123.0
 theme = SubResource("Theme_pxn0r")
 
-[node name="piece" type="Label" parent="player/AnimatedSprite2D2/Control"]
+[node name="piece" type="Label" parent="player/Control"]
 layout_mode = 0
-offset_left = 10.5432
-offset_top = -5.89474
-offset_right = 20.5432
-offset_bottom = 14.1053
+offset_left = -42.0
+offset_top = -203.0
+offset_right = -32.0
+offset_bottom = -183.0
 text = "0"
 script = ExtResource("6_5kvf0")
 
 [node name="mob" parent="." groups=["mob"] instance=ExtResource("3_o0ji7")]
-position = Vector2(981, 40)
+position = Vector2(1054.55, -118.881)
 collision_mask = 3
 metadata/_edit_group_ = true
 
@@ -482,7 +488,7 @@ scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_p663h")
 
 [node name="coffre" parent="." groups=["coffre"] instance=ExtResource("3_o0ji7")]
-position = Vector2(59, 94)
+position = Vector2(-90.9091, 412.587)
 collision_mask = 3
 metadata/_edit_group_ = true
 

@@ -27,12 +27,10 @@ func _physics_process(delta):
 	var player_vars=get_node("/root/Game")
 	var Scene_var=get_node("/root/Game")
 	new_delta+=delta
-	if Scene_var.scene=="combat":
+	if Scene_var.scene=="combat" or Scene_var.scene == "pause":
 		SPEED = 0
-		print(1)
 	else:
 		SPEED = 1
-		print(2)
 	if is_in_group(My_group[0]):
 		if player_vars.positions.x > position.x and SPEED > 0:
 			position =Vector2((vecx+1)*SPEED,vecy*SPEED)
@@ -60,10 +58,10 @@ func _physics_process(delta):
 
 func _on_body_entered(body):
 	var Scene_var=get_node("/root/Game")
-	if body.name=="player" and is_in_group(My_group[0]):
+	if body.name=="player" and is_in_group(My_group[0]) and Scene_var.scene != "pause" and Scene_var.scene != "combat":
 		Scene_var.scene="combat"
 		remove_from_group(My_group[0])
-	else:
+	elif Scene_var.scene != "pause":
 		if last_direction == "vecx+=1":
 			vecx-=2
 		if last_direction == "vecx-=1":
@@ -72,3 +70,5 @@ func _on_body_entered(body):
 			vecy-=2
 		if last_direction == "vecy-=1":
 			vecy+=2
+	else:
+		pass
