@@ -1,0 +1,19 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1704880580
+icon.svg::CompressedTexture2D::5752455154620018049::1704723164::1704880546::1::::<><>::
+README.md::TextFile::-1::1704879561::0::1::::<><>::
+theme.tres::Theme::2050376468415104759::1704880553::0::1::::<><>::
+::res://assets/::1704797289
+::res://camera/::1704878975
+FollowingCamera.gd::GDScript::-1::1704878975::0::1::::<>Camera2D<>::
+::res://images/::1704880906
+lava animation.png::CompressedTexture2D::4310437871810594092::1704875375::1704880546::1::::<><>::
+objets.png::CompressedTexture2D::6442559160881489058::1704880880::1704880908::1::::<><>::
+player.png::CompressedTexture2D::8045714975298437571::1704725658::1704880546::1::::<><>::
+terrain-map-v7.png::CompressedTexture2D::1186451569035281932::1704874692::1704880546::1::::<><>::
+terrain-v7.png::CompressedTexture2D::8819458600303815327::1521983731::1704880546::1::::<><>::
+::res://player/::1704879053
+player.gd::GDScript::-1::1704797771::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::1656268404429670326::1704879053::0::1::::<><>::res://player/player.gd<>uid://dmvn0rf41ogjj
+::res://scene/::1704880553
+world.tscn::PackedScene::4682925136193256607::1704880553::0::1::::<><>::uid://xukq7ooyyiaw::::res://player/player.tscn<>uid://4hhnvn3n6v2f::::res://theme.tres<>uid://q5yxix53y6xc::::res://images/terrain-map-v7.png<>uid://dxwhgu74v6ebf::::res://images/terrain-v7.png<>res://camera/FollowingCamera.gd<>uid://b2oajt8f4m62k::::res://images/lava animation.png
