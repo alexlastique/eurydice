@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b43cg5y38knwk"]
+[gd_scene load_steps=33 format=3 uid="uid://b43cg5y38knwk"]
 
 [ext_resource type="Script" path="res://scene/world.gd" id="1_5q4j7"]
 [ext_resource type="PackedScene" uid="uid://xukq7ooyyiaw" path="res://player/player.tscn" id="1_v4jwo"]
@@ -9,8 +9,10 @@
 [ext_resource type="Script" path="res://camera/FollowingCamera.gd" id="5_35lbm"]
 [ext_resource type="Texture2D" uid="uid://b2oajt8f4m62k" path="res://images/lava animation.png" id="5_irj3c"]
 [ext_resource type="Texture2D" uid="uid://cjq36fhl5hvii" path="res://images/piece.png" id="8_csd8u"]
+[ext_resource type="Script" path="res://scene/ghost.gd" id="8_wmf2j"]
 [ext_resource type="PackedScene" uid="uid://b2cpqeyyfr5e8" path="res://scene/pause_menu.tscn" id="9_rjfov"]
 [ext_resource type="Texture2D" uid="uid://d2gldewey0ulw" path="res://images/rouage.png" id="11_jmwlp"]
+[ext_resource type="Texture2D" uid="uid://bc04xsh2tt4uo" path="res://images/fantome.png" id="12_med1u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wxcyt"]
 texture = ExtResource("1_wt7bb")
@@ -8154,6 +8156,53 @@ sources/2 = SubResource("TileSetAtlasSource_duein")
 sources/3 = SubResource("TileSetAtlasSource_4gls0")
 sources/0 = SubResource("TileSetAtlasSource_wxcyt")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_s75x2"]
+atlas = ExtResource("12_med1u")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qnld"]
+atlas = ExtResource("12_med1u")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7emry"]
+atlas = ExtResource("12_med1u")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2umvt"]
+atlas = ExtResource("12_med1u")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pu6r7"]
+atlas = ExtResource("12_med1u")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uiq0u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s75x2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qnld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7emry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2umvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pu6r7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h668l"]
+radius = 31.0
+height = 124.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_boi4p"]
 atlas = ExtResource("8_csd8u")
 region = Rect2(0, 0, 14, 14)
@@ -8245,6 +8294,22 @@ limit_left = 0
 limit_top = 0
 script = ExtResource("5_35lbm")
 tilemap = NodePath("../../TileMap")
+
+[node name="ghost" type="CharacterBody2D" parent="."]
+position = Vector2(832, 741)
+script = ExtResource("8_wmf2j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ghost"]
+texture_filter = 1
+scale = Vector2(9.375, 9.375)
+sprite_frames = SubResource("SpriteFrames_uiq0u")
+frame_progress = 0.177206
+offset = Vector2(2.08165e-12, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ghost"]
+position = Vector2(-7, -22)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_h668l")
 
 [node name="Interface" type="CanvasLayer" parent="."]
 

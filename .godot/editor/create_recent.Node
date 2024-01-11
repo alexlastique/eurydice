@@ -1,9 +1,11 @@
+CollisionShape2D
+CharacterBody2D
+AnimatedSprite2D
+Panel
+VBoxContainer
 TextureButton
 Button
 Label
-VBoxContainer
-Panel
 Control
 CanvasLayer
 CheckButton
-AnimatedSprite2D

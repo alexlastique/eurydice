@@ -1,8 +1,5 @@
-res://scene/pause_menu.gd
-res://scene/pause_menu.tscn
+res://scene/menu.tscn
 res://theme.tres
-res://scene/world.gd
+res://scene/pause_menu.tscn
 res://scene/world.tscn
 res://player/player.tscn
-res://scene/menu.tscn
-res://control/Main.gd

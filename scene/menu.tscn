@@ -6,78 +6,87 @@
 [node name="Menu" type="CanvasLayer"]
 process_mode = 3
 
-[node name="EurydiceIcone" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(576, 324)
-scale = Vector2(10.1406, 10.1406)
-texture = ExtResource("1_dpas2")
-
-[node name="Label" type="Label" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -33.5
-offset_top = 196.0
-offset_right = 33.5
-offset_bottom = 222.0
-grow_horizontal = 2
-text = "Eurydice"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Main" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("1_aogy4")
 
-[node name="Jouer" type="Button" parent="Main"]
+[node name="Panel" type="Panel" parent="Main"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -76.5
-offset_top = -24.0
-offset_right = 76.5
-offset_bottom = 24.0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="EurydiceIcone" type="Sprite2D" parent="Main/Panel"]
+texture_filter = 1
+position = Vector2(576, 324)
+scale = Vector2(10.1406, 10.1406)
+texture = ExtResource("1_dpas2")
+
+[node name="Label" type="Label" parent="Main/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.5
+offset_top = -123.0
+offset_right = 33.5
+offset_bottom = -97.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Eurydice"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -50.5
+offset_right = 71.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Jouer" type="Button" parent="Main/Panel/VBoxContainer"]
+layout_mode = 2
 text = "Jouer
 "
 
-[node name="Options" type="Button" parent="Main"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -76.0
-offset_top = -265.0
-offset_right = 76.0
-offset_bottom = -220.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="Options" type="Button" parent="Main/Panel/VBoxContainer"]
+layout_mode = 2
 text = "Options"
 
-[node name="Quit" type="Button" parent="Main"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -76.0
-offset_top = -192.0
-offset_right = 76.0
-offset_bottom = -147.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="Quit" type="Button" parent="Main/Panel/VBoxContainer"]
+layout_mode = 2
 text = "Quit"
 
-[connection signal="pressed" from="Main/Jouer" to="Main" method="_on_jouer_pressed"]
-[connection signal="pressed" from="Main/Options" to="Main" method="_on_options_pressed"]
-[connection signal="pressed" from="Main/Quit" to="Main" method="_on_quit_pressed"]
+[connection signal="pressed" from="Main/Panel/VBoxContainer/Jouer" to="Main" method="_on_jouer_pressed"]
+[connection signal="pressed" from="Main/Panel/VBoxContainer/Options" to="Main" method="_on_options_pressed"]
+[connection signal="pressed" from="Main/Panel/VBoxContainer/Quit" to="Main" method="_on_quit_pressed"]
