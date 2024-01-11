@@ -1,0 +1,14 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1704978744
+README.md::TextFile::-1::1704978093::0::1::::<><>::
+::res://asset/::1704979103
+::res://asset/image/::1704979103
+Eurydice_Icone.png::CompressedTexture2D::3872949271361408371::1704979022::1704979106::1::::<><>::
+fantome.png::CompressedTexture2D::3441709342588829404::1704979056::1704979106::1::::<><>::
+player.png::CompressedTexture2D::4542346114160005725::1704979088::1704979106::1::::<><>::
+spritePlayer.png::CompressedTexture2D::5016778192308853270::1704978884::1704978886::1::::<><>::
+::res://asset/son/::1704978239
+::res://scene/::1704978782
+main.tscn::PackedScene::464497570448879904::1704978730::0::1::::<><>::
+player.tscn::PackedScene::4890035026299616655::1704978782::0::1::::<><>::
+::res://script/::1704978171
