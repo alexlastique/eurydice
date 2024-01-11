@@ -21,3 +21,10 @@ func _physics_process(delta):
 	
 	if velocity.length() > 0 && velocity.x != 0:
 		$AnimatedSprite2D.flip_h = velocity.x < 0
+
+	var collision = move_and_collide(velocity * delta)
+
+	# Vérifie s'il y a eu une collision
+	if collision:
+		if collision.get_collider().get_name() == "Player":
+			hide()

@@ -8255,7 +8255,6 @@ animations = [{
 
 [node name="world" type="Node2D"]
 process_mode = 3
-z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_5q4j7")
 
@@ -8296,6 +8295,7 @@ script = ExtResource("5_35lbm")
 tilemap = NodePath("../../TileMap")
 
 [node name="ghost" type="CharacterBody2D" parent="."]
+process_mode = 1
 position = Vector2(832, 741)
 script = ExtResource("8_wmf2j")
 
