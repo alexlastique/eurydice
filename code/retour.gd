@@ -22,3 +22,9 @@ func _on_retour2_pressed():
 
 func _on_modifie_les_touches_pressed():
 	hide()
+
+func _on_retour3_pressed():
+	show()
+
+func _on_son_pressed():
+	hide()

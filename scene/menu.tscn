@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bxondy6jtl1kg"]
+[gd_scene load_steps=37 format=3 uid="uid://bxondy6jtl1kg"]
 
 [ext_resource type="Texture2D" uid="uid://dptr71j08q7qj" path="res://img/menu.png" id="1_gdcda"]
 [ext_resource type="FontFile" uid="uid://05pmt2v75myi" path="res://police/PixelGameFont.ttf" id="1_iic5l"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://code/option.gd" id="4_fbtxh"]
 [ext_resource type="Script" path="res://code/retour.gd" id="6_8g7vn"]
 [ext_resource type="Script" path="res://code/Control_touche.gd" id="7_16xw0"]
+[ext_resource type="Script" path="res://code/son.gd" id="7_ns6k2"]
 [ext_resource type="Script" path="res://code/haut.gd" id="8_r523v"]
 [ext_resource type="Script" path="res://code/LabelHaut.gd" id="9_5fwyi"]
 [ext_resource type="Script" path="res://code/bas.gd" id="9_daksk"]
@@ -30,6 +31,8 @@
 [ext_resource type="Script" path="res://code/LabelMusique3.gd" id="27_fj2nj"]
 [ext_resource type="Script" path="res://code/LabelMusique4.gd" id="29_bnjtd"]
 [ext_resource type="AudioStream" uid="uid://bbprqms5xs4p5" path="res://son/musique_ambience.mp3" id="30_pa1py"]
+[ext_resource type="Script" path="res://code/Control_musique.gd" id="31_flv2g"]
+[ext_resource type="Script" path="res://code/musique_ambience.gd" id="32_typt6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ycsx0"]
 bg_color = Color(0.247059, 0.247059, 0.247059, 0.8)
@@ -87,15 +90,13 @@ offset_right = 716.0
 offset_bottom = 355.0
 text = "OPTION"
 
-[node name="exit" type="MenuButton" parent="Control_base"]
+[node name="exit" type="Button" parent="Control_base"]
 layout_mode = 0
 offset_left = 447.0
 offset_top = 364.0
 offset_right = 716.0
 offset_bottom = 448.0
 text = "QUITTER"
-flat = false
-switch_on_hover = true
 script = ExtResource("4_54k1u")
 
 [node name="Control_option" type="Control" parent="."]
@@ -116,11 +117,12 @@ text = "MODIFIE LES TOUCHE"
 
 [node name="son" type="Button" parent="Control_option"]
 layout_mode = 0
-offset_left = 448.0
+offset_left = 447.0
 offset_top = 267.0
-offset_right = 717.0
+offset_right = 716.0
 offset_bottom = 351.0
 text = "SON"
+script = ExtResource("7_ns6k2")
 
 [node name="retour" type="Button" parent="Control_option"]
 layout_mode = 0
@@ -138,7 +140,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("7_16xw0")
 
-[node name="haut" type="Button" parent="Control_touche"]
+[node name="haut" type="Button" parent="Control_touche" groups=["Persist"]]
 layout_mode = 0
 offset_left = 238.0
 offset_top = 117.0
@@ -157,7 +159,7 @@ text = "UP"
 uppercase = true
 script = ExtResource("9_5fwyi")
 
-[node name="bas" type="Button" parent="Control_touche"]
+[node name="bas" type="Button" parent="Control_touche" groups=["Persist"]]
 layout_mode = 0
 offset_left = 237.0
 offset_top = 195.0
@@ -176,7 +178,7 @@ text = "down"
 uppercase = true
 script = ExtResource("11_hjtfl")
 
-[node name="gauche" type="Button" parent="Control_touche"]
+[node name="gauche" type="Button" parent="Control_touche" groups=["Persist"]]
 layout_mode = 0
 offset_left = 232.0
 offset_top = 295.0
@@ -195,7 +197,7 @@ text = "left"
 uppercase = true
 script = ExtResource("13_xmkcc")
 
-[node name="droite" type="Button" parent="Control_touche"]
+[node name="droite" type="Button" parent="Control_touche" groups=["Persist"]]
 layout_mode = 0
 offset_left = 230.0
 offset_top = 382.0
@@ -214,7 +216,7 @@ text = "right"
 uppercase = true
 script = ExtResource("15_n7k6y")
 
-[node name="interagire" type="Button" parent="Control_touche"]
+[node name="interagire" type="Button" parent="Control_touche" groups=["Persist"]]
 layout_mode = 0
 offset_left = 232.0
 offset_top = 461.0
@@ -233,7 +235,7 @@ text = "enter"
 uppercase = true
 script = ExtResource("17_5ar5w")
 
-[node name="annuler" type="Button" parent="Control_touche"]
+[node name="annuler" type="Button" parent="Control_touche" groups=["Persist"]]
 layout_mode = 0
 offset_left = 236.0
 offset_top = 549.0
@@ -252,7 +254,7 @@ text = "down"
 uppercase = true
 script = ExtResource("19_d5kpo")
 
-[node name="pause" type="Button" parent="Control_touche"]
+[node name="pause" type="Button" parent="Control_touche" groups=["Persist"]]
 layout_mode = 0
 offset_left = 582.0
 offset_top = 123.0
@@ -271,7 +273,7 @@ text = "escape"
 uppercase = true
 script = ExtResource("21_bbqbj")
 
-[node name="musique1" type="Button" parent="Control_touche"]
+[node name="musique1" type="Button" parent="Control_touche" groups=["Persist"]]
 layout_mode = 0
 offset_left = 581.0
 offset_top = 201.0
@@ -290,7 +292,7 @@ text = "a"
 uppercase = true
 script = ExtResource("23_1f26f")
 
-[node name="musique2" type="Button" parent="Control_touche"]
+[node name="musique2" type="Button" parent="Control_touche" groups=["Persist"]]
 layout_mode = 0
 offset_left = 576.0
 offset_top = 301.0
@@ -309,7 +311,7 @@ text = "z"
 uppercase = true
 script = ExtResource("25_khd1r")
 
-[node name="musique3" type="Button" parent="Control_touche"]
+[node name="musique3" type="Button" parent="Control_touche" groups=["Persist"]]
 layout_mode = 0
 offset_left = 574.0
 offset_top = 388.0
@@ -328,7 +330,7 @@ text = "e"
 uppercase = true
 script = ExtResource("27_fj2nj")
 
-[node name="musique4" type="Button" parent="Control_touche"]
+[node name="musique4" type="Button" parent="Control_touche" groups=["Persist"]]
 layout_mode = 0
 offset_left = 576.0
 offset_top = 467.0
@@ -355,16 +357,45 @@ offset_right = 849.0
 offset_bottom = 639.0
 text = "RETOUR"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Control_musique" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("31_flv2g")
+
+[node name="musique_ambience" type="AudioStreamPlayer" parent="Control_musique"]
 stream = ExtResource("30_pa1py")
 autoplay = true
+script = ExtResource("32_typt6")
+
+[node name="volume" type="HSlider" parent="Control_musique"]
+layout_mode = 0
+offset_left = 446.0
+offset_top = 110.0
+offset_right = 724.0
+offset_bottom = 284.0
+min_value = -24.0
+max_value = 2.08165e-12
+scrollable = false
+
+[node name="retour" type="Button" parent="Control_musique"]
+offset_left = 447.0
+offset_top = 365.0
+offset_right = 716.0
+offset_bottom = 449.0
+text = "RETOUR"
 
 [connection signal="pressed" from="Control_base/play" to="Control_base/play" method="_on_pressed"]
+[connection signal="pressed" from="Control_base/play" to="Control_touche" method="_on_play_pressed"]
 [connection signal="pressed" from="Control_base/option" to="Control_base" method="_on_option_pressed"]
 [connection signal="pressed" from="Control_base/option" to="Control_option" method="_on_option_pressed"]
+[connection signal="pressed" from="Control_base/exit" to="Control_touche" method="_on_exit_pressed"]
 [connection signal="pressed" from="Control_base/exit" to="Control_base/exit" method="_on_pressed"]
 [connection signal="pressed" from="Control_option/modifie_les_touches" to="Control_option" method="_on_modifie_les_touches_pressed"]
 [connection signal="pressed" from="Control_option/modifie_les_touches" to="Control_touche" method="_on_modifie_les_touches_pressed"]
+[connection signal="pressed" from="Control_option/son" to="Control_option" method="_on_son_pressed"]
+[connection signal="pressed" from="Control_option/son" to="Control_musique" method="_on_son_pressed"]
 [connection signal="pressed" from="Control_option/retour" to="Control_base" method="_on_retour_pressed"]
 [connection signal="pressed" from="Control_option/retour" to="Control_option" method="_on_retour_pressed"]
 [connection signal="pressed" from="Control_touche/haut" to="Control_touche/haut" method="_on_pressed"]
@@ -380,3 +411,7 @@ autoplay = true
 [connection signal="pressed" from="Control_touche/musique4" to="Control_touche/musique4" method="_on_pressed"]
 [connection signal="pressed" from="Control_touche/retour" to="Control_option" method="_on_retour2_pressed"]
 [connection signal="pressed" from="Control_touche/retour" to="Control_touche" method="_on_retour_pressed"]
+[connection signal="drag_ended" from="Control_musique/volume" to="Control_musique/musique_ambience" method="_on_volume_drag_ended"]
+[connection signal="value_changed" from="Control_musique/volume" to="Control_musique/musique_ambience" method="_on_volume_value_changed"]
+[connection signal="pressed" from="Control_musique/retour" to="Control_option" method="_on_retour3_pressed"]
+[connection signal="pressed" from="Control_musique/retour" to="Control_musique" method="_on_retour_pressed"]

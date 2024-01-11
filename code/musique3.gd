@@ -22,3 +22,9 @@ func _on_pressed():
 	if touch.get_class() == classEventKey.get_class():
 		InputMap.action_erase_events("musique3")
 		InputMap.action_add_event("musique3", touch)
+
+func save():
+	var save_dict = {
+		"musique3" : InputMap.action_get_events("musique3")[0]
+	}
+	return save_dict
