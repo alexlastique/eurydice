@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://b43cg5y38knwk"]
+[gd_scene load_steps=24 format=3 uid="uid://b43cg5y38knwk"]
 
+[ext_resource type="Script" path="res://scene/world.gd" id="1_5q4j7"]
 [ext_resource type="PackedScene" uid="uid://xukq7ooyyiaw" path="res://player/player.tscn" id="1_v4jwo"]
 [ext_resource type="Texture2D" uid="uid://cx13ajm00k52u" path="res://images/objets.png" id="1_wt7bb"]
 [ext_resource type="Theme" uid="uid://clc5h0mnm64a4" path="res://theme.tres" id="2_0ebql"]
@@ -8,6 +9,8 @@
 [ext_resource type="Script" path="res://camera/FollowingCamera.gd" id="5_35lbm"]
 [ext_resource type="Texture2D" uid="uid://b2oajt8f4m62k" path="res://images/lava animation.png" id="5_irj3c"]
 [ext_resource type="Texture2D" uid="uid://cjq36fhl5hvii" path="res://images/piece.png" id="8_csd8u"]
+[ext_resource type="PackedScene" uid="uid://b2cpqeyyfr5e8" path="res://scene/pause_menu.tscn" id="9_rjfov"]
+[ext_resource type="Texture2D" uid="uid://d2gldewey0ulw" path="res://images/rouage.png" id="11_jmwlp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wxcyt"]
 texture = ExtResource("1_wt7bb")
@@ -8202,12 +8205,15 @@ animations = [{
 }]
 
 [node name="world" type="Node2D"]
+process_mode = 3
 z_index = 1
 y_sort_enabled = true
+script = ExtResource("1_5q4j7")
 
 [node name="TileMap" type="TileMap" parent="."]
 show_behind_parent = true
 y_sort_enabled = true
+scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_wlxqq")
 cell_quadrant_size = 32
 format = 2
@@ -8229,6 +8235,7 @@ layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(2621446, 393216, 8, 2818057, 393216, 8, 1245211, 393216, 8, 1245212, 393216, 8, 1376278, 393216, 12, 1441821, 393216, 12, 983096, 393216, 12, 327729, 262144, 9, 917565, 262144, 9, 131113, 262144, 9, 65589, 393216, 12, 73, 393216, 12, 1245246, 393216, 12, 1966137, 393216, 12, 2228285, 393216, 12, 1900618, 393216, 12, 2883659, 131072, 12, 2949190, 131072, 12, 2818091, 131072, 12, 1245226, 720896, 8, 2097177, 720896, 8, 983048, 720896, 8, 524316, 720896, 8, 786474, 720896, 8, 983111, 720896, 8, 1441851, 720896, 8, 2031685, 720896, 8, 1900595, 720896, 8, 1769535, 393216, 4, 1376326, 393216, 4, 1572928, 393216, 0, 1441839, 393216, 0, 1769519, 393216, 0, 1114163, 393216, 0, 2162736, 131072, 4, 1376297, 131072, 4, 983075, 131072, 4, 1900582, 262144, 1, 1769509, 131072, 1, 983080, 393216, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_v4jwo")]
+process_mode = 1
 z_index = 1
 y_sort_enabled = true
 
@@ -8252,4 +8259,27 @@ texture_filter = 1
 position = Vector2(17.5, 51.5)
 scale = Vector2(1.92857, 1.92857)
 sprite_frames = SubResource("SpriteFrames_4j336")
-frame_progress = 0.600503
+frame_progress = 0.111172
+
+[node name="Control" type="Control" parent="Interface"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1577.0
+offset_bottom = 648.0
+
+[node name="PauseMenu" parent="Interface" node_paths=PackedStringArray("GameManager") instance=ExtResource("9_rjfov")]
+GameManager = NodePath("../..")
+
+[node name="Parametre" type="TextureButton" parent="Interface"]
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -25.0
+offset_top = 7.0
+offset_right = -7.0
+offset_bottom = 25.0
+grow_horizontal = 0
+texture_normal = ExtResource("11_jmwlp")
+
+[connection signal="pressed" from="Interface/Parametre" to="." method="_on_parametre_pressed"]

@@ -1,6 +1,8 @@
-res://scene/menu.tscn
-res://scene/world.tscn
+res://scene/pause_menu.gd
+res://scene/pause_menu.tscn
 res://theme.tres
+res://scene/world.gd
+res://scene/world.tscn
 res://player/player.tscn
-res://scene/EurydiceIcone.gd
-res://scene/Button.gd
+res://scene/menu.tscn
+res://control/Main.gd

@@ -11,6 +11,6 @@ config_version=5
 [application]
 
 config/name="Eurydice"
-run/main_scene="res://scene/world.tscn"
+run/main_scene="res://scene/menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"

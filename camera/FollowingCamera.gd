@@ -6,7 +6,7 @@ func _ready():
 	print(tilemap)
 	var MapRect = tilemap.get_used_rect()
 	var TileSize = tilemap.cell_quadrant_size
-	var WorldSizeInPixel = MapRect.size * TileSize
+	var WorldSizeInPixel = MapRect.size * TileSize * 2
 	limit_right = WorldSizeInPixel.x
 	limit_bottom = WorldSizeInPixel.y
 	

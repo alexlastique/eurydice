@@ -1,5 +1,9 @@
+TextureButton
 Button
 Label
-CanvasLayer
+VBoxContainer
+Panel
 Control
+CanvasLayer
+CheckButton
 AnimatedSprite2D
