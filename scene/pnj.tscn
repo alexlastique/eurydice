@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://bp2lu2olcnfuc"]
+
+[node name="pnj" type="CharacterBody2D"]
+metadata/_edit_group_ = true
