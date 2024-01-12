@@ -3,7 +3,7 @@ extends CharacterBody2D
 var windowsize
 var marg = 30
 var wanted_pos = position
-var moovspeed = 400
+var moovspeed = 200
 
 func _ready():
 	$AnimatedSprite2D.play()
