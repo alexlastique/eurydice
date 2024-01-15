@@ -1,8 +1,2 @@
-res://scene/player.tscn
 res://scene/main.tscn
-res://script/player.gd
-res://scene/pnj.tscn
-res://script/pnj.gd
 res://asset/new_theme.tres
-res://script/piece.gd
-res://script/ath.gd
