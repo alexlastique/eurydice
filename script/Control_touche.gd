@@ -1,17 +1,10 @@
 extends Control
 
-var touche = InputEventKey.new()
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	load_game()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 
 func _on_retour_pressed():
 	hide()
@@ -20,7 +13,7 @@ func _on_modifie_les_touches_pressed():
 	show()
 
 func save_game():
-	var save_game = FileAccess.open("option.txt", FileAccess.WRITE)
+	var save_game1 = FileAccess.open("option.txt", FileAccess.WRITE)
 	var save_nodes = get_tree().get_nodes_in_group("Persist")
 	
 	for node in save_nodes:
@@ -33,15 +26,15 @@ func save_game():
 
 		var json_string = JSON.stringify(node_data)
 
-		save_game.store_line(json_string)
+		save_game1.store_line(json_string)
 
 func load_game():
 	if not FileAccess.file_exists("option.txt"):
 		return 0
 
-	var save_game = FileAccess.open("option.txt", FileAccess.READ)
-	while save_game.get_position() < save_game.get_length():
-		var json_string = save_game.get_line()
+	var save_game2 = FileAccess.open("option.txt", FileAccess.READ)
+	while save_game2.get_position() < save_game2.get_length():
+		var json_string = save_game2.get_line()
 
 		var json = JSON.new()
 
@@ -52,6 +45,7 @@ func load_game():
 
 		var node_data = json.get_data()
 		for i in node_data:
+			var touche = InputEventKey.new()
 			touche.set_keycode(OS.find_keycode_from_string(node_data[i].get_slice("=",1).get_slice(" ",1).get_slice("(",1).get_slice(")",0)))
 			if i == "ui_up":
 				InputMap.action_erase_events("ui_up")
