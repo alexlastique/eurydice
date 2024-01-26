@@ -1,4 +1,6 @@
-res://scene/player.tscn
+res://scene/menu.tscn
 res://asset/new_theme.tres
+res://scene/player.tscn
 res://scene/pnj.tscn
 res://scene/main.tscn
+res://script/Control_musique.gd

@@ -11,13 +11,9 @@ config_version=5
 [application]
 
 config/name="Eurydice"
-run/main_scene="res://scene/main.tscn"
+run/main_scene="res://scene/menu.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
-
-[autoload]
-
-Game="*res://code/game.gd"
 
 [display]
 
