@@ -113,11 +113,12 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s1cib"]
-radius = 12.0
-height = 50.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2gl2q"]
+size = Vector2(58.9999, 48.0002)
 
 [node name="player" type="CharacterBody2D"]
+y_sort_enabled = true
+position = Vector2(0, 1)
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -127,7 +128,8 @@ sprite_frames = SubResource("SpriteFrames_hpwvs")
 frame_progress = 0.997137
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.05317e-05, -20.5)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_s1cib")
+shape = SubResource("RectangleShape2D_2gl2q")
 
 [node name="Camera2D" type="Camera2D" parent="."]
