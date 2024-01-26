@@ -1,5 +1,4 @@
-res://scene/main.tscn
-res://asset/new_theme.tres
 res://scene/player.tscn
+res://asset/new_theme.tres
 res://scene/pnj.tscn
-res://scene/menu.tscn
+res://scene/main.tscn
