@@ -10,13 +10,12 @@ func _ready():
 
 func _input(event):
 	if event.get_class() == classEventKey.get_class() and buttonPressed:
-		touch = event
+		InputMap.action_erase_events("musique2")
+		InputMap.action_add_event("musique2", event)
+	buttonPressed=false
 
 func _on_pressed():
 	buttonPressed=true
-	if touch.get_class() == classEventKey.get_class():
-		InputMap.action_erase_events("musique2")
-		InputMap.action_add_event("musique2", touch)
 
 func save():
 	var save_dict = {
