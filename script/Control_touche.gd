@@ -13,7 +13,7 @@ func _on_modifie_les_touches_pressed():
 	show()
 
 func save_game():
-	var save_game1 = FileAccess.open("option.txt", FileAccess.WRITE)
+	var save_game1 = FileAccess.open("optionTouch.txt", FileAccess.WRITE)
 	var save_nodes = get_tree().get_nodes_in_group("Persist")
 	
 	for node in save_nodes:
@@ -29,10 +29,10 @@ func save_game():
 		save_game1.store_line(json_string)
 
 func load_game():
-	if not FileAccess.file_exists("option.txt"):
+	if not FileAccess.file_exists("optionTouch.txt"):
 		return 0
 
-	var save_game2 = FileAccess.open("option.txt", FileAccess.READ)
+	var save_game2 = FileAccess.open("optionTouch.txt", FileAccess.READ)
 	while save_game2.get_position() < save_game2.get_length():
 		var json_string = save_game2.get_line()
 
@@ -46,7 +46,8 @@ func load_game():
 		var node_data = json.get_data()
 		for i in node_data:
 			var touche = InputEventKey.new()
-			touche.set_keycode(OS.find_keycode_from_string(node_data[i].get_slice("=",1).get_slice(" ",1).get_slice("(",1).get_slice(")",0)))
+			if i != "musique":
+				touche.set_keycode(OS.find_keycode_from_string(node_data[i].get_slice("=",1).get_slice(" ",1).get_slice("(",1).get_slice(")",0)))
 			if i == "ui_up":
 				InputMap.action_erase_events("ui_up")
 				InputMap.action_add_event("ui_up", touche)

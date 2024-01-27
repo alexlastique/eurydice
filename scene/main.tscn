@@ -3052,7 +3052,7 @@ y_sort_enabled = true
 [node name="Map_Village" type="TileMap" parent="world"]
 y_sort_enabled = true
 texture_filter = 1
-scale = Vector2(10, 10)
+scale = Vector2(5, 5)
 tile_set = SubResource("TileSet_f7neu")
 format = 2
 layer_0/name = "sol"
