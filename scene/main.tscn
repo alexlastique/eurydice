@@ -1,5 +1,6 @@
-[gd_scene load_steps=30 format=3 uid="uid://gvahboxykdv1"]
+[gd_scene load_steps=32 format=3 uid="uid://gvahboxykdv1"]
 
+[ext_resource type="Script" path="res://script/world.gd" id="1_838lq"]
 [ext_resource type="PackedScene" uid="uid://cbw1fr1ssv1ex" path="res://scene/player.tscn" id="1_qv43m"]
 [ext_resource type="Script" path="res://script/player.gd" id="2_b2hv3"]
 [ext_resource type="Texture2D" uid="uid://luk3odbbju58" path="res://asset/image/TilesetVillageAbandoned.png" id="2_ecmpd"]
@@ -11,6 +12,7 @@
 [ext_resource type="Theme" uid="uid://d2winwbx7no1c" path="res://asset/new_theme.tres" id="8_f3u34"]
 [ext_resource type="Texture2D" uid="uid://b1yqcnpvgho3q" path="res://asset/image/piece.png" id="9_sq2ig"]
 [ext_resource type="FontFile" uid="uid://01x17hllpvfv" path="res://asset/PixelGameFont.ttf" id="11_u3g7u"]
+[ext_resource type="PackedScene" uid="uid://b2cpqeyyfr5e8" path="res://scene/pause_menu.tscn" id="12_6ptdj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_etu0i"]
 texture = ExtResource("3_njy1b")
@@ -3044,8 +3046,11 @@ animations = [{
 }]
 
 [node name="main" type="Node"]
+process_mode = 3
+script = ExtResource("1_838lq")
 
 [node name="world" type="Node2D" parent="."]
+process_mode = 1
 z_index = 1
 y_sort_enabled = true
 
@@ -3122,3 +3127,6 @@ offset_right = 26.0
 offset_bottom = 16.0
 theme_override_fonts/font = ExtResource("11_u3g7u")
 text = "0"
+
+[node name="PauseMenu" parent="ath" node_paths=PackedStringArray("world") instance=ExtResource("12_6ptdj")]
+world = NodePath("../..")

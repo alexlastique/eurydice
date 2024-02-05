@@ -3,5 +3,6 @@ res://asset/new_theme.tres
 res://scene/pnj.tscn
 res://scene/main.tscn
 res://scene/menu.tscn
-res://script/musique_ambience.gd
-res://script/Control_touche.gd
+res://scene/pause_menu.tscn
+res://script/pause_menu.gd
+res://script/world.gd
