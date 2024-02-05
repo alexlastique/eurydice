@@ -6,3 +6,5 @@ res://scene/menu.tscn
 res://scene/pause_menu.tscn
 res://script/pause_menu.gd
 res://script/world.gd
+res://script/pnj.gd
+res://scene/combat.tscn

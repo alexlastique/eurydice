@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://gvahboxykdv1"]
+[gd_scene load_steps=33 format=3 uid="uid://gvahboxykdv1"]
 
 [ext_resource type="Script" path="res://script/world.gd" id="1_838lq"]
 [ext_resource type="PackedScene" uid="uid://cbw1fr1ssv1ex" path="res://scene/player.tscn" id="1_qv43m"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://djfpog3tl1m2l" path="res://asset/image/terrain-v7.png" id="3_vym1b"]
 [ext_resource type="PackedScene" uid="uid://bp2lu2olcnfuc" path="res://scene/pnj.tscn" id="6_aep2m"]
 [ext_resource type="Texture2D" uid="uid://bpbgpkicrml1m" path="res://asset/image/fantome.png" id="7_sxrih"]
+[ext_resource type="Script" path="res://script/pnj.gd" id="8_0lss5"]
 [ext_resource type="Script" path="res://script/ath.gd" id="8_7jwdo"]
 [ext_resource type="Theme" uid="uid://d2winwbx7no1c" path="res://asset/new_theme.tres" id="8_f3u34"]
 [ext_resource type="Texture2D" uid="uid://b1yqcnpvgho3q" path="res://asset/image/piece.png" id="9_sq2ig"]
@@ -3076,18 +3077,19 @@ script = ExtResource("2_b2hv3")
 
 [node name="Camera2D2" type="Camera2D" parent="world/player"]
 
-[node name="pnj" parent="world" instance=ExtResource("6_aep2m")]
+[node name="fantome" parent="world" instance=ExtResource("6_aep2m")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(184, -19)
+script = ExtResource("8_0lss5")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="world/pnj"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="world/fantome"]
 texture_filter = 1
 position = Vector2(13.5, 14.5)
 scale = Vector2(3.9375, 3.0625)
 sprite_frames = SubResource("SpriteFrames_w1sv5")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="world/pnj"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="world/fantome"]
 position = Vector2(14, 27)
 shape = SubResource("RectangleShape2D_ltfbb")
 

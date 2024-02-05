@@ -1,10 +1,10 @@
+AnimatedSprite2D
 CanvasLayer
 Button
 Label
 VBoxContainer
 Panel
 Control
-AnimatedSprite2D
 ProgressBar
 Camera2D
 CharacterBody2D
