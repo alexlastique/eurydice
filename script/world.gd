@@ -3,6 +3,14 @@ extends Node
 class_name GameManager
 
 signal toggleGamePaused(is_paused : bool)
+signal openOptions(is_options_open : bool)
+
+var optionsOpen : bool = false:
+	get:
+		return optionsOpen
+	set(value):
+		optionsOpen = value
+		emit_signal("openOptions", optionsOpen)
 
 var gamePaused : bool = false:
 	get:
@@ -18,8 +26,5 @@ func _ready():
 
 
 func _input(event : InputEvent):
-	if(event.is_action_pressed("ui_home")):
+	if event.is_action_pressed("ui_home") and !optionsOpen:
 		gamePaused = !gamePaused
-
-func _on_parametre_pressed():
-	gamePaused = !gamePaused

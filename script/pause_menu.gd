@@ -6,22 +6,23 @@ extends Control
 func _ready():
 	hide()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func _on_main_toggle_game_paused(is_paused : bool):
 	if is_paused:
 		show()
 	else:
 		hide() # Replace with function body.
 
+func _on_main_open_options(is_options_open):
+	if is_options_open:
+		hide()
+	else:
+		show()
 
 func _on_resume_pressed():
-	print(world.gamePaused)
 	world.gamePaused = false
 
+func _on_options_pressed():
+	world.optionsOpen = true
 
 func _on_quit_pressed():
 	world.gamePaused = false

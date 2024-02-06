@@ -1,33 +1,6 @@
-[gd_scene load_steps=29 format=3 uid="uid://b2cpqeyyfr5e8"]
+[gd_scene load_steps=2 format=3 uid="uid://b2cpqeyyfr5e8"]
 
 [ext_resource type="Script" path="res://script/pause_menu.gd" id="1_xm83v"]
-[ext_resource type="Script" path="res://script/VBoxContainer.gd" id="2_myrke"]
-[ext_resource type="Script" path="res://script/retour.gd" id="3_c1jji"]
-[ext_resource type="Script" path="res://script/son.gd" id="4_1a6wc"]
-[ext_resource type="Script" path="res://script/Control_touche.gd" id="5_f21uu"]
-[ext_resource type="Script" path="res://script/haut.gd" id="6_iggca"]
-[ext_resource type="Script" path="res://script/LabelHaut.gd" id="7_bt30l"]
-[ext_resource type="Script" path="res://script/bas.gd" id="8_isg6h"]
-[ext_resource type="Script" path="res://script/LabelBas.gd" id="9_ry4ec"]
-[ext_resource type="Script" path="res://script/gauche.gd" id="10_g8hrt"]
-[ext_resource type="Script" path="res://script/LabelGauche.gd" id="11_ltjda"]
-[ext_resource type="Script" path="res://script/droite.gd" id="12_v12bv"]
-[ext_resource type="Script" path="res://script/LabelDroite.gd" id="13_f0sij"]
-[ext_resource type="Script" path="res://script/interagire.gd" id="14_yg4gw"]
-[ext_resource type="Script" path="res://script/LabelInteragire.gd" id="15_3v3h1"]
-[ext_resource type="Script" path="res://script/annuler.gd" id="16_t2ko0"]
-[ext_resource type="Script" path="res://script/LabelAnnuler.gd" id="17_qljqo"]
-[ext_resource type="Script" path="res://script/pause.gd" id="18_jpc23"]
-[ext_resource type="Script" path="res://script/LabelPause.gd" id="19_nksbx"]
-[ext_resource type="Script" path="res://script/musique1.gd" id="20_wt561"]
-[ext_resource type="Script" path="res://script/LabelMusique1.gd" id="21_6kajb"]
-[ext_resource type="Script" path="res://script/musique2.gd" id="22_ubuiq"]
-[ext_resource type="Script" path="res://script/LabelMusique2.gd" id="23_e11id"]
-[ext_resource type="Script" path="res://script/musique3.gd" id="24_y0q3v"]
-[ext_resource type="Script" path="res://script/LabelMusique3.gd" id="25_yh8su"]
-[ext_resource type="Script" path="res://script/musique4.gd" id="26_s30by"]
-[ext_resource type="Script" path="res://script/LabelMusique4.gd" id="27_ruof5"]
-[ext_resource type="Script" path="res://script/Control_musique.gd" id="28_1l88h"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 2
@@ -35,10 +8,6 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 56.0
-offset_top = -59.0
-offset_right = 56.0
-offset_bottom = -59.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xm83v")
@@ -51,28 +20,26 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -91.0
-offset_top = -116.0
+offset_top = -89.0
 offset_right = 91.0
-offset_bottom = 287.0
+offset_bottom = 89.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Panel"]
-offset_right = 182.0
-offset_bottom = 28.0
-text = "PAUSE"
-horizontal_alignment = 1
-
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 14
+anchor_top = 0.5
 anchor_right = 1.0
-offset_bottom = 166.0
+anchor_bottom = 0.5
+offset_top = -81.5
+offset_bottom = 81.5
 grow_horizontal = 2
-script = ExtResource("2_myrke")
+grow_vertical = 2
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
+text = "PAUSE"
 horizontal_alignment = 1
 
 [node name="Resume" type="Button" parent="Panel/VBoxContainer"]
@@ -95,311 +62,6 @@ layout_mode = 2
 size_flags_vertical = 8
 text = "Menu"
 
-[node name="Control_option" type="Control" parent="Panel"]
-visible = false
-layout_mode = 2
-anchors_preset = 0
-offset_top = 170.0
-offset_right = 182.0
-offset_bottom = 170.0
-script = ExtResource("3_c1jji")
-
-[node name="modifie_les_touches" type="Button" parent="Panel/Control_option"]
-layout_mode = 0
-offset_top = -143.0
-offset_right = 182.0
-offset_bottom = -112.0
-text = "Modifie les touche"
-
-[node name="son" type="Button" parent="Panel/Control_option"]
-layout_mode = 0
-offset_top = -108.0
-offset_right = 182.0
-offset_bottom = -77.0
-text = "Son"
-script = ExtResource("4_1a6wc")
-
-[node name="retour" type="Button" parent="Panel/Control_option"]
-layout_mode = 0
-offset_top = -73.0
-offset_right = 182.0
-offset_bottom = -42.0
-text = "Retour"
-
-[node name="Control_touche" type="Control" parent="Panel"]
-visible = false
-layout_mode = 2
-anchors_preset = 0
-offset_top = 174.0
-offset_right = 182.0
-offset_bottom = 174.0
-script = ExtResource("5_f21uu")
-
-[node name="haut" type="Button" parent="Panel/Control_touche" groups=["Persist"]]
-layout_mode = 0
-offset_left = 2.0
-offset_top = -149.0
-offset_right = 54.0
-offset_bottom = -118.0
-text = "Haut"
-script = ExtResource("6_iggca")
-
-[node name="LabelHaut" type="Label" parent="Panel/Control_touche/haut"]
-layout_mode = 0
-offset_left = 53.0
-offset_top = 4.0
-offset_right = 95.0
-offset_bottom = 30.0
-text = "UP"
-uppercase = true
-script = ExtResource("7_bt30l")
-
-[node name="bas" type="Button" parent="Panel/Control_touche" groups=["Persist"]]
-layout_mode = 0
-offset_left = 2.0
-offset_top = -118.0
-offset_right = 40.0
-offset_bottom = -87.0
-text = "Bas"
-script = ExtResource("8_isg6h")
-
-[node name="LabelBas" type="Label" parent="Panel/Control_touche/bas"]
-layout_mode = 0
-offset_left = 38.0
-offset_top = 2.0
-offset_right = 91.0
-offset_bottom = 28.0
-text = "down"
-uppercase = true
-script = ExtResource("9_ry4ec")
-
-[node name="gauche" type="Button" parent="Panel/Control_touche" groups=["Persist"]]
-layout_mode = 0
-offset_left = 2.0
-offset_top = -87.0
-offset_right = 69.0
-offset_bottom = -56.0
-text = "Gauche"
-script = ExtResource("10_g8hrt")
-
-[node name="LabelGauche" type="Label" parent="Panel/Control_touche/gauche"]
-layout_mode = 0
-offset_left = 68.0
-offset_top = 2.0
-offset_right = 110.0
-offset_bottom = 28.0
-text = "left"
-uppercase = true
-script = ExtResource("11_ltjda")
-
-[node name="droite" type="Button" parent="Panel/Control_touche" groups=["Persist"]]
-layout_mode = 0
-offset_left = 2.0
-offset_top = -56.0
-offset_right = 59.0
-offset_bottom = -25.0
-text = "Droite"
-script = ExtResource("12_v12bv")
-
-[node name="LabelDroite" type="Label" parent="Panel/Control_touche/droite"]
-layout_mode = 0
-offset_left = 58.0
-offset_top = 2.0
-offset_right = 106.0
-offset_bottom = 28.0
-text = "right"
-uppercase = true
-script = ExtResource("13_f0sij")
-
-[node name="interagire" type="Button" parent="Panel/Control_touche" groups=["Persist"]]
-layout_mode = 0
-offset_left = 2.0
-offset_top = -25.0
-offset_right = 87.0
-offset_bottom = 6.0
-text = "Interagire"
-script = ExtResource("14_yg4gw")
-
-[node name="LabelInteragire" type="Label" parent="Panel/Control_touche/interagire"]
-layout_mode = 0
-offset_left = 85.0
-offset_top = 4.0
-offset_right = 135.0
-offset_bottom = 30.0
-text = "enter"
-uppercase = true
-script = ExtResource("15_3v3h1")
-
-[node name="annuler" type="Button" parent="Panel/Control_touche" groups=["Persist"]]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 6.0
-offset_right = 72.0
-offset_bottom = 37.0
-text = "Annuler"
-script = ExtResource("16_t2ko0")
-
-[node name="LabelAnnuler" type="Label" parent="Panel/Control_touche/annuler"]
-layout_mode = 0
-offset_left = 74.0
-offset_top = 4.0
-offset_right = 127.0
-offset_bottom = 30.0
-text = "down"
-uppercase = true
-script = ExtResource("17_qljqo")
-
-[node name="pause" type="Button" parent="Panel/Control_touche" groups=["Persist"]]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 37.0
-offset_right = 57.0
-offset_bottom = 68.0
-text = "Pause"
-script = ExtResource("18_jpc23")
-
-[node name="LabelPause" type="Label" parent="Panel/Control_touche/pause"]
-layout_mode = 0
-offset_left = 60.0
-offset_top = 5.0
-offset_right = 118.0
-offset_bottom = 31.0
-text = "escape"
-uppercase = true
-script = ExtResource("19_nksbx")
-
-[node name="musique1" type="Button" parent="Panel/Control_touche" groups=["Persist"]]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 68.0
-offset_right = 86.0
-offset_bottom = 99.0
-text = "Musique1"
-script = ExtResource("20_wt561")
-
-[node name="LabelMusique1" type="Label" parent="Panel/Control_touche/musique1"]
-layout_mode = 0
-offset_left = 92.0
-offset_top = 3.0
-offset_right = 145.0
-offset_bottom = 29.0
-text = "a"
-uppercase = true
-script = ExtResource("21_6kajb")
-
-[node name="musique2" type="Button" parent="Panel/Control_touche" groups=["Persist"]]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 99.0
-offset_right = 101.0
-offset_bottom = 130.0
-text = "Musique2"
-script = ExtResource("22_ubuiq")
-
-[node name="LabelMusique2" type="Label" parent="Panel/Control_touche/musique2"]
-layout_mode = 0
-offset_left = 103.0
-offset_top = 3.0
-offset_right = 156.0
-offset_bottom = 29.0
-text = "z"
-uppercase = true
-script = ExtResource("23_e11id")
-
-[node name="musique3" type="Button" parent="Panel/Control_touche" groups=["Persist"]]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 130.0
-offset_right = 86.0
-offset_bottom = 161.0
-text = "Musique3"
-script = ExtResource("24_y0q3v")
-
-[node name="LabelMusique3" type="Label" parent="Panel/Control_touche/musique3"]
-layout_mode = 0
-offset_left = 86.0
-offset_top = 2.0
-offset_right = 139.0
-offset_bottom = 28.0
-text = "e"
-uppercase = true
-script = ExtResource("25_yh8su")
-
-[node name="musique4" type="Button" parent="Panel/Control_touche" groups=["Persist"]]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 161.0
-offset_right = 86.0
-offset_bottom = 192.0
-text = "Musique4"
-script = ExtResource("26_s30by")
-
-[node name="LabelMusique4" type="Label" parent="Panel/Control_touche/musique4"]
-layout_mode = 0
-offset_left = 86.0
-offset_top = 2.0
-offset_right = 139.0
-offset_bottom = 28.0
-text = "r"
-uppercase = true
-script = ExtResource("27_ruof5")
-
-[node name="retour" type="Button" parent="Panel/Control_touche"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 192.0
-offset_right = 63.0
-offset_bottom = 223.0
-text = "Retour"
-
-[node name="Control_musique" type="Control" parent="Panel"]
-visible = false
-layout_mode = 2
-anchors_preset = 0
-offset_top = 178.0
-offset_right = 182.0
-offset_bottom = 178.0
-script = ExtResource("28_1l88h")
-
-[node name="volume" type="HSlider" parent="Panel/Control_musique"]
-layout_mode = 0
-offset_left = -2.0
-offset_top = -178.0
-offset_right = 184.0
-offset_bottom = -70.0
-min_value = -24.0
-max_value = 2.08165e-12
-scrollable = false
-
-[node name="retour" type="Button" parent="Panel/Control_musique"]
-layout_mode = 0
-offset_top = -81.0
-offset_right = 182.0
-offset_bottom = -50.0
-text = "RETOUR"
-
 [connection signal="pressed" from="Panel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Options" to="Panel/VBoxContainer" method="_on_options_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Options" to="Panel/Control_option" method="_on_option_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Menu" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Panel/Control_option/modifie_les_touches" to="Panel/Control_option" method="_on_modifie_les_touches_pressed"]
-[connection signal="pressed" from="Panel/Control_option/modifie_les_touches" to="Panel/Control_touche" method="_on_modifie_les_touches_pressed"]
-[connection signal="pressed" from="Panel/Control_option/son" to="Panel/Control_option" method="_on_son_pressed"]
-[connection signal="pressed" from="Panel/Control_option/son" to="Panel/Control_musique" method="_on_son_pressed"]
-[connection signal="pressed" from="Panel/Control_option/retour" to="Panel/VBoxContainer" method="_on_retour_pressed"]
-[connection signal="pressed" from="Panel/Control_option/retour" to="Panel/Control_option" method="_on_retour_pressed"]
-[connection signal="pressed" from="Panel/Control_touche/haut" to="Panel/Control_touche/haut" method="_on_pressed"]
-[connection signal="pressed" from="Panel/Control_touche/bas" to="Panel/Control_touche/bas" method="_on_pressed"]
-[connection signal="pressed" from="Panel/Control_touche/gauche" to="Panel/Control_touche/gauche" method="_on_pressed"]
-[connection signal="pressed" from="Panel/Control_touche/droite" to="Panel/Control_touche/droite" method="_on_pressed"]
-[connection signal="pressed" from="Panel/Control_touche/interagire" to="Panel/Control_touche/interagire" method="_on_pressed"]
-[connection signal="pressed" from="Panel/Control_touche/annuler" to="Panel/Control_touche/annuler" method="_on_pressed"]
-[connection signal="pressed" from="Panel/Control_touche/pause" to="Panel/Control_touche/pause" method="_on_pressed"]
-[connection signal="pressed" from="Panel/Control_touche/musique1" to="Panel/Control_touche/musique1" method="_on_pressed"]
-[connection signal="pressed" from="Panel/Control_touche/musique2" to="Panel/Control_touche/musique2" method="_on_pressed"]
-[connection signal="pressed" from="Panel/Control_touche/musique3" to="Panel/Control_touche/musique3" method="_on_pressed"]
-[connection signal="pressed" from="Panel/Control_touche/musique4" to="Panel/Control_touche/musique4" method="_on_pressed"]
-[connection signal="pressed" from="Panel/Control_touche/retour" to="Panel/Control_option" method="_on_retour2_pressed"]
-[connection signal="pressed" from="Panel/Control_touche/retour" to="Panel/Control_touche" method="_on_retour_pressed"]
-[connection signal="pressed" from="Panel/Control_musique/retour" to="Panel/Control_option" method="_on_retour3_pressed"]
-[connection signal="pressed" from="Panel/Control_musique/retour" to="Panel/Control_musique" method="_on_retour_pressed"]
