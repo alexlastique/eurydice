@@ -79,7 +79,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_0h34k")
 }],
 "loop": true,
-"name": &"default",
+"name": &"fantome",
 "speed": 5.0
 }]
 
@@ -87,8 +87,8 @@ animations = [{
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(556, 60)
-scale = Vector2(18.81, 18.81)
+position = Vector2(576, 324)
+scale = Vector2(18, 10.125)
 texture = ExtResource("1_5d2qr")
 
 [node name="Button" type="Button" parent="."]
@@ -114,4 +114,5 @@ texture_filter = 1
 position = Vector2(967, 242)
 scale = Vector2(22, 22)
 sprite_frames = SubResource("SpriteFrames_cjfcy")
+animation = &"fantome"
 flip_h = true
