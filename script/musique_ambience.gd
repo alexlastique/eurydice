@@ -1,4 +1,4 @@
-extends AudioStreamPlayer
+extends Node
 
 var volume
 
@@ -11,8 +11,8 @@ func _on_volume_value_changed(value):
 	
 func _on_volume_drag_ended(value_changed):
 	if (volume!=null):
-		set_volume_db(volume)
-		save_musique(volume)
+		get_node("/root/Menu/Control_musique/musique_ambience").set_volume_db(volume)
+		get_node("/root/Menu/Control_musique/musique_ambience").save_musique(volume)
 
 func save_musique(volume):
 	var save_dict = {
@@ -42,8 +42,8 @@ func load_musique():
 			var touche
 			touche = node_data[i]
 			if i == "musique":
-				set_volume_db(touche)
+				get_node("/root/Menu/Control_musique/musique_ambience").set_volume_db(touche)
 
 
 func _on_finished():
-	playing=true
+	get_node("/root/Menu/Control_musique/musique_ambience").playing=true

@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://cgfpjoak248yt"]
+[gd_scene load_steps=16 format=3 uid="uid://cgfpjoak248yt"]
 
 [ext_resource type="Texture2D" uid="uid://bvgc55n0r1buh" path="res://asset/image/Eurydice_Icone.png" id="1_5d2qr"]
+[ext_resource type="Script" path="res://script/musiqueGame.gd" id="2_1hyv2"]
 [ext_resource type="Texture2D" uid="uid://cdqfuscna24uc" path="res://asset/image/spritePlayer.png" id="2_erlfn"]
 [ext_resource type="Texture2D" uid="uid://bpbgpkicrml1m" path="res://asset/image/fantome.png" id="3_d3qm5"]
 
@@ -91,13 +92,6 @@ position = Vector2(576, 324)
 scale = Vector2(18, 10.125)
 texture = ExtResource("1_5d2qr")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 798.0
-offset_top = 524.0
-offset_right = 1123.0
-offset_bottom = 605.0
-text = "play"
-
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 process_callback = 0
@@ -116,3 +110,20 @@ scale = Vector2(22, 22)
 sprite_frames = SubResource("SpriteFrames_cjfcy")
 animation = &"fantome"
 flip_h = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = 798.0
+offset_top = 524.0
+offset_right = 1123.0
+offset_bottom = 605.0
+text = "play"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 406.0
+offset_right = 766.0
+offset_bottom = 649.0
+script = ExtResource("2_1hyv2")
+
+[connection signal="pressed" from="Button" to="Control" method="_on_button_pressed"]

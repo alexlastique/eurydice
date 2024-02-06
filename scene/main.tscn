@@ -3086,6 +3086,7 @@ visible = false
 script = ExtResource("16_47cfx")
 
 [node name="combat" parent="CanvasLayerCombat" instance=ExtResource("15_8hbom")]
+process_mode = 1
 script = ExtResource("16_vpi1r")
 
 [connection signal="toggleGamePaused" from="." to="ath/PauseMenu" method="_on_main_toggle_game_paused"]

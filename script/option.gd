@@ -3,10 +3,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var musique_ambience = get_node("/root/Main/Control_musique/musique_ambience")
-
-
-
+	pass
 
 func _on_retour_pressed():
 	show()
