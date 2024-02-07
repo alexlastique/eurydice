@@ -6,7 +6,7 @@ var wanted_pos = position
 var moovspeed = 200
 var combat
 
-signal toggleComabt(is_Combat : bool)
+signal toggleCombat(is_Combat : bool)
 signal name_pnj(name : String)
 
 func _ready():
@@ -33,12 +33,12 @@ func _physics_process(delta):
 		if collision:
 			if collision.get_collider().get_name() == "player":
 				combat = true
-				emit_signal("toggleComabt", combat)
+				emit_signal("toggleCombat", combat)
 				emit_signal("name_pnj", get_node(".").name)
 
 
 func _on_combat_end_combat(is_Combat):
-	emit_signal("toggleComabt", false)
+	emit_signal("toggleCombat", false)
 
 
 func _on_area_2d_area_entered(area):

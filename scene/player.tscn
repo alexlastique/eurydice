@@ -1,7 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://cbw1fr1ssv1ex"]
+[gd_scene load_steps=18 format=3 uid="uid://cbw1fr1ssv1ex"]
 
 [ext_resource type="Texture2D" uid="uid://b5yl1obrq1ynt" path="res://asset/image/player.png" id="1_oqyrb"]
-[ext_resource type="Script" path="res://script/player.gd" id="1_ym4v8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r3yke"]
 atlas = ExtResource("1_oqyrb")
@@ -120,7 +119,6 @@ size = Vector2(58.9999, 48.0002)
 [node name="player" type="CharacterBody2D"]
 y_sort_enabled = true
 position = Vector2(0, 1)
-script = ExtResource("1_ym4v8")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

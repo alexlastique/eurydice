@@ -10,7 +10,7 @@ func _ready():
 func _process(delta):
 	pass
 
-func _on_fantome_toggle_comabt(is_Combat):
+func _on_fantome_toggle_combat(is_Combat):
 	if (is_Combat):
 		show()
 	else :
