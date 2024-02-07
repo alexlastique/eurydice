@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b2cpqeyyfr5e8"]
+[gd_scene load_steps=30 format=3 uid="uid://b2cpqeyyfr5e8"]
 
 [ext_resource type="Script" path="res://script/pause_menu.gd" id="1_xm83v"]
 [ext_resource type="Script" path="res://script/VBoxContainer.gd" id="2_myrke"]
@@ -28,6 +28,7 @@
 [ext_resource type="Script" path="res://script/musique4.gd" id="26_s30by"]
 [ext_resource type="Script" path="res://script/LabelMusique4.gd" id="27_ruof5"]
 [ext_resource type="Script" path="res://script/Control_musique.gd" id="28_1l88h"]
+[ext_resource type="Script" path="res://script/musique_ambience.gd" id="30_b1gea"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 2
@@ -58,6 +59,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
 offset_right = 182.0
 offset_bottom = 28.0
 text = "PAUSE"
@@ -378,6 +380,9 @@ offset_right = 182.0
 offset_bottom = -50.0
 text = "RETOUR"
 
+[node name="Node" type="Node" parent="Panel/Control_musique"]
+script = ExtResource("30_b1gea")
+
 [connection signal="pressed" from="Panel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Options" to="Panel/VBoxContainer" method="_on_options_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Options" to="Panel/Control_option" method="_on_option_pressed"]
@@ -401,5 +406,7 @@ text = "RETOUR"
 [connection signal="pressed" from="Panel/Control_touche/musique4" to="Panel/Control_touche/musique4" method="_on_pressed"]
 [connection signal="pressed" from="Panel/Control_touche/retour" to="Panel/Control_option" method="_on_retour2_pressed"]
 [connection signal="pressed" from="Panel/Control_touche/retour" to="Panel/Control_touche" method="_on_retour_pressed"]
+[connection signal="drag_ended" from="Panel/Control_musique/volume" to="Panel/Control_musique/Node" method="_on_volume_drag_ended"]
+[connection signal="value_changed" from="Panel/Control_musique/volume" to="Panel/Control_musique/Node" method="_on_volume_value_changed"]
 [connection signal="pressed" from="Panel/Control_musique/retour" to="Panel/Control_option" method="_on_retour3_pressed"]
 [connection signal="pressed" from="Panel/Control_musique/retour" to="Panel/Control_musique" method="_on_retour_pressed"]
