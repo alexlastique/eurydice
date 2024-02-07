@@ -1,5 +1,7 @@
-Sprite2D
+Camera2D
 CollisionShape2D
+Sprite2D
+CharacterBody2D
 RigidBody2D
 Control
 Area2D
@@ -10,8 +12,6 @@ Label
 VBoxContainer
 Panel
 ProgressBar
-Camera2D
-CharacterBody2D
 TileMap
 Node2D
 Node
