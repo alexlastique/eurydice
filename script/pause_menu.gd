@@ -27,5 +27,4 @@ func _on_options_pressed():
 func _on_quit_pressed():
 	world.gamePaused = false
 	world.inGame = false
-	get_tree().change_scene_to_file("res://scene/menu.tscn")
 

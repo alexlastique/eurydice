@@ -5,4 +5,4 @@ res://scene/combat.tscn
 res://scene/main.tscn
 res://scene/options_menu.tscn
 res://scene/menu.tscn
-res://script/menu.gd
+res://script/pause_menu.gd
