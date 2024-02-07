@@ -15,11 +15,11 @@ func _process(delta):
 		free()
 
 func _input(event):
-	if event.is_released():
+	if event is InputEventKey:
 		if 444<position.y and position.y<568:
 			if event.is_action("musique1") and name == "bleu":
 				free()
-			elif event.is_action("musique1") and name != "bleu":
-				print("phase defense2")
+	#		elif event.is_action("musique1") and name != "bleu":
+	#			print("phase defense2")
 		elif position.y<444 and name == "bleu":
 			print("phase defense3")

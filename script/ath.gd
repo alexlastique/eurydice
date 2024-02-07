@@ -6,7 +6,7 @@ func _ready():
 	$piece.play()
 
 
-func _on_fantome_toggle_comabt(is_Combat):
+func _on_fantome_toggle_combat(is_Combat):
 	if (is_Combat):
 		hide()
 	else :
