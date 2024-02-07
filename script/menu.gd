@@ -11,7 +11,7 @@ func _ready():
 func _on_main_open_options(is_options_open):
 	if is_options_open:
 		Buttons.hide()
-	elif world.inGame == false:
+	else:
 		Buttons.show()
 
 func _on_main_start_game(is_game_started):

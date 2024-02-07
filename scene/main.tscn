@@ -3033,8 +3033,6 @@ z_index = 1
 position = Vector2(-77, 88)
 script = ExtResource("2_b2hv3")
 
-[node name="Camera2D2" type="Camera2D" parent="world/player"]
-
 [node name="fantome" parent="world" instance=ExtResource("6_aep2m")]
 z_index = 1
 y_sort_enabled = true
@@ -3088,10 +3086,10 @@ world = NodePath("../..")
 world = NodePath("../..")
 
 [node name="CanvasLayerCombat" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("16_47cfx")
 
 [node name="combat" parent="CanvasLayerCombat" instance=ExtResource("15_8hbom")]
+visible = false
 script = ExtResource("16_vpi1r")
 
 [connection signal="openOptions" from="." to="ath/PauseMenu" method="_on_main_open_options"]
