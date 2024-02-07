@@ -360,6 +360,7 @@ text = "RETOUR"
 
 [node name="Control_musique" type="Control" parent="."]
 visible = false
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -389,11 +390,9 @@ offset_bottom = 449.0
 text = "RETOUR"
 
 [connection signal="pressed" from="Control_base/play" to="Control_base/play" method="_on_pressed"]
-[connection signal="pressed" from="Control_base/play" to="Control_touche" method="_on_play_pressed"]
 [connection signal="pressed" from="Control_base/option" to="Control_base" method="_on_option_pressed"]
 [connection signal="pressed" from="Control_base/option" to="Control_option" method="_on_option_pressed"]
 [connection signal="pressed" from="Control_base/exit" to="Control_base/exit" method="_on_pressed"]
-[connection signal="pressed" from="Control_base/exit" to="Control_touche" method="_on_exit_pressed"]
 [connection signal="pressed" from="Control_option/modifie_les_touches" to="Control_option" method="_on_modifie_les_touches_pressed"]
 [connection signal="pressed" from="Control_option/modifie_les_touches" to="Control_touche" method="_on_modifie_les_touches_pressed"]
 [connection signal="pressed" from="Control_option/son" to="Control_option" method="_on_son_pressed"]
@@ -411,9 +410,10 @@ text = "RETOUR"
 [connection signal="pressed" from="Control_touche/musique2" to="Control_touche/musique2" method="_on_pressed"]
 [connection signal="pressed" from="Control_touche/musique3" to="Control_touche/musique3" method="_on_pressed"]
 [connection signal="pressed" from="Control_touche/musique4" to="Control_touche/musique4" method="_on_pressed"]
-[connection signal="pressed" from="Control_touche/retour" to="Control_option" method="_on_retour2_pressed"]
+[connection signal="pressed" from="Control_touche/retour" to="Control_option" method="_on_retour3_pressed"]
 [connection signal="pressed" from="Control_touche/retour" to="Control_touche" method="_on_retour_pressed"]
+[connection signal="finished" from="Control_musique/musique_ambience" to="Control_musique/musique_ambience" method="_on_finished"]
 [connection signal="drag_ended" from="Control_musique/volume" to="Control_musique/musique_ambience" method="_on_volume_drag_ended"]
 [connection signal="value_changed" from="Control_musique/volume" to="Control_musique/musique_ambience" method="_on_volume_value_changed"]
-[connection signal="pressed" from="Control_musique/retour" to="Control_option" method="_on_retour3_pressed"]
+[connection signal="pressed" from="Control_musique/retour" to="Control_option" method="_on_retour2_pressed"]
 [connection signal="pressed" from="Control_musique/retour" to="Control_musique" method="_on_retour_pressed"]

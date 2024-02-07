@@ -3,16 +3,16 @@ extends AudioStreamPlayer
 var volume
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _process(delta):
 	load_musique()
-
-func _on_volume_drag_ended(value_changed):
-	
-	set_volume_db(volume)
-	save_musique(volume)
 
 func _on_volume_value_changed(value):
 	volume = value
+	
+func _on_volume_drag_ended(value_changed):
+	if (volume!=null):
+		set_volume_db(volume)
+		save_musique(volume)
 
 func save_musique(volume):
 	var save_dict = {
@@ -43,3 +43,7 @@ func load_musique():
 			touche = node_data[i]
 			if i == "musique":
 				set_volume_db(touche)
+
+
+func _on_finished():
+	playing=true

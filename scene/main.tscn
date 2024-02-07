@@ -1,16 +1,22 @@
-[gd_scene load_steps=30 format=3 uid="uid://gvahboxykdv1"]
+[gd_scene load_steps=29 format=3 uid="uid://gvahboxykdv1"]
 
+[ext_resource type="Script" path="res://script/world.gd" id="1_838lq"]
 [ext_resource type="PackedScene" uid="uid://cbw1fr1ssv1ex" path="res://scene/player.tscn" id="1_qv43m"]
+[ext_resource type="Script" path="res://script/worldHide.gd" id="2_0r50u"]
 [ext_resource type="Script" path="res://script/player.gd" id="2_b2hv3"]
 [ext_resource type="Texture2D" uid="uid://luk3odbbju58" path="res://asset/image/TilesetVillageAbandoned.png" id="2_ecmpd"]
 [ext_resource type="Texture2D" uid="uid://c1umbe5qitt5r" path="res://asset/image/TilesetFloor.png" id="3_njy1b"]
 [ext_resource type="Texture2D" uid="uid://djfpog3tl1m2l" path="res://asset/image/terrain-v7.png" id="3_vym1b"]
 [ext_resource type="PackedScene" uid="uid://bp2lu2olcnfuc" path="res://scene/pnj.tscn" id="6_aep2m"]
-[ext_resource type="Texture2D" uid="uid://bpbgpkicrml1m" path="res://asset/image/fantome.png" id="7_sxrih"]
+[ext_resource type="Script" path="res://script/pnj.gd" id="8_0lss5"]
 [ext_resource type="Script" path="res://script/ath.gd" id="8_7jwdo"]
 [ext_resource type="Theme" uid="uid://d2winwbx7no1c" path="res://asset/new_theme.tres" id="8_f3u34"]
 [ext_resource type="Texture2D" uid="uid://b1yqcnpvgho3q" path="res://asset/image/piece.png" id="9_sq2ig"]
 [ext_resource type="FontFile" uid="uid://01x17hllpvfv" path="res://asset/PixelGameFont.ttf" id="11_u3g7u"]
+[ext_resource type="PackedScene" uid="uid://b2cpqeyyfr5e8" path="res://scene/pause_menu.tscn" id="12_6ptdj"]
+[ext_resource type="PackedScene" uid="uid://cgfpjoak248yt" path="res://scene/combat.tscn" id="15_8hbom"]
+[ext_resource type="Script" path="res://script/CanvasLayerCombat.gd" id="16_47cfx"]
+[ext_resource type="Script" path="res://script/combat.gd" id="16_vpi1r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_etu0i"]
 texture = ExtResource("3_njy1b")
@@ -2947,52 +2953,6 @@ sources/0 = SubResource("TileSetAtlasSource_etu0i")
 sources/5 = SubResource("TileSetAtlasSource_71vwr")
 sources/1 = SubResource("TileSetAtlasSource_r53f3")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tum28"]
-atlas = ExtResource("7_sxrih")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0tigx"]
-atlas = ExtResource("7_sxrih")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cyqhj"]
-atlas = ExtResource("7_sxrih")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d0b8k"]
-atlas = ExtResource("7_sxrih")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7q71r"]
-atlas = ExtResource("7_sxrih")
-region = Rect2(64, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_w1sv5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tum28")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0tigx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cyqhj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d0b8k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7q71r")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltfbb"]
-size = Vector2(57, 24.5)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_xqqhu"]
 atlas = ExtResource("9_sq2ig")
 region = Rect2(0, 0, 14, 14)
@@ -3044,10 +3004,14 @@ animations = [{
 }]
 
 [node name="main" type="Node"]
+process_mode = 3
+script = ExtResource("1_838lq")
 
 [node name="world" type="Node2D" parent="."]
+process_mode = 1
 z_index = 1
 y_sort_enabled = true
+script = ExtResource("2_0r50u")
 
 [node name="Map_Village" type="TileMap" parent="world"]
 y_sort_enabled = true
@@ -3067,24 +3031,16 @@ layer_1/tile_data = PackedInt32Array(-589826, 1, 0)
 
 [node name="player" parent="world" instance=ExtResource("1_qv43m")]
 z_index = 1
+position = Vector2(-77, 88)
 script = ExtResource("2_b2hv3")
 
 [node name="Camera2D2" type="Camera2D" parent="world/player"]
 
-[node name="pnj" parent="world" instance=ExtResource("6_aep2m")]
+[node name="fantome" parent="world" instance=ExtResource("6_aep2m")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(184, -19)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="world/pnj"]
-texture_filter = 1
-position = Vector2(13.5, 14.5)
-scale = Vector2(3.9375, 3.0625)
-sprite_frames = SubResource("SpriteFrames_w1sv5")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="world/pnj"]
-position = Vector2(14, 27)
-shape = SubResource("RectangleShape2D_ltfbb")
+position = Vector2(394, 10)
+script = ExtResource("8_0lss5")
 
 [node name="ath" type="CanvasLayer" parent="."]
 script = ExtResource("8_7jwdo")
@@ -3122,3 +3078,20 @@ offset_right = 26.0
 offset_bottom = 16.0
 theme_override_fonts/font = ExtResource("11_u3g7u")
 text = "0"
+
+[node name="PauseMenu" parent="ath" instance=ExtResource("12_6ptdj")]
+
+[node name="CanvasLayerCombat" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("16_47cfx")
+
+[node name="combat" parent="CanvasLayerCombat" instance=ExtResource("15_8hbom")]
+script = ExtResource("16_vpi1r")
+
+[connection signal="toggleGamePaused" from="." to="ath/PauseMenu" method="_on_main_toggle_game_paused"]
+[connection signal="name_pnj" from="world/fantome" to="CanvasLayerCombat/combat" method="_on_fantome_name_pnj"]
+[connection signal="toggleComabt" from="world/fantome" to="world" method="_on_fantome_toggle_comabt"]
+[connection signal="toggleComabt" from="world/fantome" to="world/player" method="_on_fantome_toggle_comabt"]
+[connection signal="toggleComabt" from="world/fantome" to="ath" method="_on_fantome_toggle_comabt"]
+[connection signal="toggleComabt" from="world/fantome" to="CanvasLayerCombat" method="_on_fantome_toggle_comabt"]
+[connection signal="endCombat" from="CanvasLayerCombat/combat" to="world/fantome" method="_on_combat_end_combat"]

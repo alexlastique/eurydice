@@ -3,11 +3,15 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$piece.play()
+	pass # Replace with function body.
 
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
 
 func _on_fantome_toggle_comabt(is_Combat):
 	if (is_Combat):
-		hide()
-	else :
 		show()
+	else :
+		hide()
