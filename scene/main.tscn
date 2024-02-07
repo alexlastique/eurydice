@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://gvahboxykdv1"]
+[gd_scene load_steps=31 format=3 uid="uid://gvahboxykdv1"]
 
 [ext_resource type="Script" path="res://script/world.gd" id="1_838lq"]
 [ext_resource type="PackedScene" uid="uid://cbw1fr1ssv1ex" path="res://scene/player.tscn" id="1_qv43m"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bj0imulat1001" path="res://scene/options_menu.tscn" id="15_234vm"]
 [ext_resource type="Script" path="res://script/CanvasLayerCombat.gd" id="16_47cfx"]
 [ext_resource type="Script" path="res://script/combat.gd" id="16_vpi1r"]
+[ext_resource type="PackedScene" uid="uid://72dqvj3wq7oy" path="res://scene/menu.tscn" id="16_wq2mt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_etu0i"]
 texture = ExtResource("3_njy1b")
@@ -3080,6 +3081,9 @@ text = "0"
 [node name="PauseMenu" parent="ath" node_paths=PackedStringArray("world") instance=ExtResource("12_6ptdj")]
 world = NodePath("../..")
 
+[node name="Menu" parent="ath" node_paths=PackedStringArray("world") instance=ExtResource("16_wq2mt")]
+world = NodePath("../..")
+
 [node name="options_menu" parent="ath" node_paths=PackedStringArray("world") instance=ExtResource("15_234vm")]
 world = NodePath("../..")
 
@@ -3091,7 +3095,10 @@ script = ExtResource("16_47cfx")
 script = ExtResource("16_vpi1r")
 
 [connection signal="openOptions" from="." to="ath/PauseMenu" method="_on_main_open_options"]
+[connection signal="openOptions" from="." to="ath/Menu" method="_on_main_open_options"]
 [connection signal="openOptions" from="." to="ath/options_menu" method="_on_main_open_options"]
+[connection signal="startGame" from="." to="world" method="_on_main_start_game"]
+[connection signal="startGame" from="." to="ath/Menu" method="_on_main_start_game"]
 [connection signal="toggleGamePaused" from="." to="ath/PauseMenu" method="_on_main_toggle_game_paused"]
 [connection signal="name_pnj" from="world/fantome" to="CanvasLayerCombat/combat" method="_on_fantome_name_pnj"]
 [connection signal="toggleComabt" from="world/fantome" to="world" method="_on_fantome_toggle_comabt"]

@@ -4,6 +4,14 @@ class_name GameManager
 
 signal toggleGamePaused(is_paused : bool)
 signal openOptions(is_options_open : bool)
+signal startGame(is_game_started : bool)
+
+var inGame : bool = false:
+	get:
+		return inGame
+	set(value):
+		inGame = value
+		emit_signal("startGame", inGame)
 
 var optionsOpen : bool = false:
 	get:
@@ -26,5 +34,5 @@ func _ready():
 
 
 func _input(event : InputEvent):
-	if event.is_action_pressed("ui_home") and !optionsOpen:
+	if event.is_action_pressed("ui_home") and !optionsOpen and inGame:
 		gamePaused = !gamePaused
