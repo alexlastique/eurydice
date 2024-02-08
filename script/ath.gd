@@ -3,11 +3,5 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	show()
 	$piece.play()
-
-
-func _on_fantome_toggle_comabt(is_Combat):
-	if (is_Combat):
-		hide()
-	else :
-		show()

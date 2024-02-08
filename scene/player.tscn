@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://cbw1fr1ssv1ex"]
+[gd_scene load_steps=19 format=3 uid="uid://cbw1fr1ssv1ex"]
 
+[ext_resource type="Script" path="res://script/player.gd" id="1_nft85"]
 [ext_resource type="Texture2D" uid="uid://b5yl1obrq1ynt" path="res://asset/image/player.png" id="1_oqyrb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r3yke"]
@@ -119,6 +120,7 @@ height = 48.0
 
 [node name="player" type="CharacterBody2D"]
 y_sort_enabled = true
+script = ExtResource("1_nft85")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -133,3 +135,5 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_wvkqo")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
