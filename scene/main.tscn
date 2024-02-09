@@ -1,8 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://gvahboxykdv1"]
+[gd_scene load_steps=29 format=3 uid="uid://gvahboxykdv1"]
 
 [ext_resource type="Script" path="res://script/world.gd" id="1_838lq"]
 [ext_resource type="PackedScene" uid="uid://cbw1fr1ssv1ex" path="res://scene/player.tscn" id="1_qv43m"]
 [ext_resource type="Script" path="res://script/worldHide.gd" id="2_0r50u"]
+[ext_resource type="Script" path="res://script/player.gd" id="2_b2hv3"]
 [ext_resource type="Texture2D" uid="uid://luk3odbbju58" path="res://asset/image/TilesetVillageAbandoned.png" id="2_ecmpd"]
 [ext_resource type="Texture2D" uid="uid://c1umbe5qitt5r" path="res://asset/image/TilesetFloor.png" id="3_njy1b"]
 [ext_resource type="Texture2D" uid="uid://djfpog3tl1m2l" path="res://asset/image/terrain-v7.png" id="3_vym1b"]
@@ -3031,6 +3032,7 @@ layer_1/tile_data = PackedInt32Array(-589826, 1, 0)
 [node name="player" parent="world" instance=ExtResource("1_qv43m")]
 z_index = 1
 position = Vector2(-77, 88)
+script = ExtResource("2_b2hv3")
 
 [node name="Camera2D2" type="Camera2D" parent="world/player"]
 

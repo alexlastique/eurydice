@@ -18,6 +18,7 @@ func _input(event):
 		emit_signal("endCombat", false)
 		var piece = int(get_node("/root/main/ath/piece/Control/Label").text)+mobLoot[nameEnemy]["loot"]
 		get_node("/root/main/ath/piece/Control/Label").text = str(piece)
+		get_node("Control/AudioStreamPlayer2D").playing = false
 		get_node("/root/main/world/" + nameEnemy).queue_free()
 		prese = true
 

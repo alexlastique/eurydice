@@ -1,3 +1,16 @@
 res://scene/dongeon.tscn
 res://asset/new_theme.tres
 res://scene/main.tscn
+res://script/musiqueGame.gd
+res://scene/cercle.tscn
+res://script/option.gd
+res://script/combat.gd
+res://script/world.gd
+res://script/cercle.gd
+res://script/combatMusic.gd
+res://scene/dongeon.tscn
+res://script/pnj.gd
+res://script/ath.gd
+res://script/CanvasLayerCombat.gd
+res://script/pause_menu.gd
+res://scene/player.tscn
