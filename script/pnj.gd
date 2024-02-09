@@ -39,7 +39,3 @@ func _physics_process(delta):
 
 func _on_combat_end_combat(is_Combat):
 	emit_signal("toggleCombat", false)
-
-
-func _on_area_2d_area_entered(area):
-	print(area)

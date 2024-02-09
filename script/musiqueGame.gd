@@ -5,8 +5,6 @@ var presse
 
 func _process(delta):
 	i += delta
-	print(i)
-	print(presse)
 	if i >=0.74 and presse:
 		$AudioStreamPlayer2D.play()
 		presse = false

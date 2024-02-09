@@ -26,6 +26,3 @@ func _input(event):
 func _on_fantome_name_pnj(name):
 	nameEnemy = name
 	$AnimatedSprite2D.play(nameEnemy)
-
-func _on_area_2d_2_area_entered(area):
-	print(area)
