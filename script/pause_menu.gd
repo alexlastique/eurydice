@@ -19,7 +19,6 @@ func _on_main_toggle_game_paused(is_paused : bool):
 
 
 func _on_resume_pressed():
-	print(world.gamePaused)
 	world.gamePaused = false
 
 
