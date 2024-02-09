@@ -27,6 +27,14 @@ var inGame : bool = false:
 		inGame = value
 		emit_signal("startGame", inGame)
 
+signal CurrentWorld(current_world : int)
+var currentworld : int = -1:
+	get:
+		return currentworld
+	set(value):
+		currentworld = value
+		emit_signal("CurrentWorld", currentworld)
+
 signal startFight(is_in_fight : bool)
 var inFight : bool = false:
 	get:
@@ -34,18 +42,10 @@ var inFight : bool = false:
 	set(value):
 		inFight = value
 		emit_signal("startFight", inFight)
-		
-var village: Node2D
-func _ready():
-	village = get_node("village")
-	remove_child(village)
-	
 
-func _on_start_game(is_game_started):
-	if is_game_started:
-		add_child(village)
-	else:
-		remove_child(village)
+func _ready():
+	var musique_ambience = get_node("/root/Menu/Control_musique/musique_ambience")
+
 
 func _input(event : InputEvent):
 	if event.is_action_pressed("ui_home") and !optionsOpen and inGame:

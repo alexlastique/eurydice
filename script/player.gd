@@ -47,4 +47,5 @@ func _physics_process(delta):
 		else:
 			$AnimatedSprite2D.animation = "default"
 
-
+func _on_area_2d_body_entered(body):
+	print_debug(body.name)

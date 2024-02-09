@@ -1,18 +1,8 @@
 extends Node2D
 
-var ghost : CharacterBody2D
-
 func _ready():
 	hide()
 	get_tree().paused = true
-
-func _on_main_start_game(is_game_started):
-	if is_game_started:
-		get_tree().paused = false
-		show()
-	else:
-		get_tree().paused = true
-		hide()
 
 func _on_main_start_fight(is_in_fight):
 	if is_in_fight:
@@ -21,3 +11,9 @@ func _on_main_start_fight(is_in_fight):
 	else:
 		get_tree().paused = false
 		show()
+
+func _on_main_current_world(current_world):
+	if current_world == 1:
+		show()
+	else:
+		hide()

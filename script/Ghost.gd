@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-@export var world : GameManager
 @export var player : CharacterBody2D
 
 var speed : int = 300

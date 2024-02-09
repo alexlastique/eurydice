@@ -2,12 +2,9 @@ res://scene/main.tscn
 res://asset/new_theme.tres
 res://scene/combat.tscn
 res://scene/menu.tscn
-res://scene/preset/ghost.tscn
+res://scene/prefab/ghost.tscn
 res://scene/player.tscn
 res://scene/pause_menu.tscn
 res://scene/options_menu.tscn
 res://scene/dongeon.tscn
-res://script/player.gd
-res://script/menu.gd
-res://script/Ghost.gd
-res://script/worldHide.gd
+res://scene/village.tscn
