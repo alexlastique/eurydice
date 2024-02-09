@@ -5,6 +5,7 @@ var moovspeed = 500
 var vel
 var wanted_pos = position
 var combat
+var visiblePlayer = true
 
 func _ready():
 	$AnimatedSprite2D.play()
@@ -47,3 +48,20 @@ func _physics_process(delta):
 			$AnimatedSprite2D.animation = "default"
 
 
+func _on_area_2d_body_entered(body):
+	if body.name == "player":
+		hide()
+
+func _on_area_2d_2_body_entered(body):
+	if body.name == "player":
+		show()
+
+
+func _on_area_2d_3_body_entered(body):
+	if body.name == "player":
+		hide()
+
+
+func _on_area_2d_4_body_entered(body):
+	if body.name == "player":
+		show()
