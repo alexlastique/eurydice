@@ -1,9 +1,5 @@
-res://scene/combat.tscn
-res://scene/player.tscn
+res://scene/dongeon.tscn
 res://asset/new_theme.tres
-res://scene/pnj.tscn
-res://scene/menu.tscn
-res://scene/pause_menu.tscn
 res://scene/main.tscn
 res://script/musiqueGame.gd
 res://scene/cercle.tscn
@@ -17,3 +13,4 @@ res://script/pnj.gd
 res://script/ath.gd
 res://script/CanvasLayerCombat.gd
 res://script/pause_menu.gd
+res://scene/player.tscn
