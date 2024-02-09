@@ -6,6 +6,7 @@ var vel
 var combat
 
 func _ready():
+	$Camera2D.position = position
 	$AnimatedSprite2D.play()
 
 

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var player : CharacterBody2D
+@onready var player : CharacterBody2D = $'../player'
 
 var speed : int = 300
 
