@@ -1,11 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://cgfpjoak248yt"]
+[gd_scene load_steps=19 format=3 uid="uid://cgfpjoak248yt"]
 
 [ext_resource type="Texture2D" uid="uid://bvgc55n0r1buh" path="res://asset/image/Eurydice_Icone.png" id="1_5d2qr"]
-[ext_resource type="Script" path="res://script/combat.gd" id="1_vwpsm"]
+[ext_resource type="Script" path="res://script/combat.gd" id="1_rsh6e"]
 [ext_resource type="Script" path="res://script/musiqueGame.gd" id="2_1hyv2"]
 [ext_resource type="Texture2D" uid="uid://cdqfuscna24uc" path="res://asset/image/spritePlayer.png" id="2_erlfn"]
 [ext_resource type="Texture2D" uid="uid://bpbgpkicrml1m" path="res://asset/image/fantome.png" id="3_d3qm5"]
-[ext_resource type="Texture2D" uid="uid://cllbrolrfgpkc" path="res://asset/image/guitaremap.png" id="5_hty7w"]
+[ext_resource type="Texture2D" uid="uid://cllbrolrfgpkc" path="res://asset/image/guitareMap.png" id="5_hty7w"]
+[ext_resource type="AudioStream" uid="uid://8miycquffx8r" path="res://asset/son/Enthousiaste_002.mp3" id="6_nesqr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iv8a0"]
 atlas = ExtResource("2_erlfn")
@@ -82,22 +83,18 @@ animations = [{
 "texture": SubResource("AtlasTexture_0h34k")
 }],
 "loop": true,
-"name": &"fantome",
+"name": &"Ghost",
 "speed": 5.0
 }]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_vwpsm")
+script = ExtResource("1_rsh6e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(576, 324)
 scale = Vector2(18, 10.125)
 texture = ExtResource("1_5d2qr")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-process_callback = 0
 
 [node name="player" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -106,12 +103,12 @@ scale = Vector2(12.7812, 11.5938)
 sprite_frames = SubResource("SpriteFrames_rgo7p")
 flip_h = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="mob" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(967, 242)
 scale = Vector2(22, 22)
 sprite_frames = SubResource("SpriteFrames_cjfcy")
-animation = &"fantome"
+animation = &"Ghost"
 flip_h = true
 
 [node name="Button" type="Button" parent="."]
@@ -135,5 +132,8 @@ position = Vector2(-104, 0)
 scale = Vector2(1.3275, 0.80875)
 texture = ExtResource("5_hty7w")
 centered = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Control"]
+stream = ExtResource("6_nesqr")
 
 [connection signal="pressed" from="Button" to="Control" method="_on_button_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cllbrolrfgpkc"
-path="res://.godot/imported/guitareMap.png-dec75a2b4ed6ca7293044aa7bbd301e0.ctex"
+uid="uid://ddckfyova2uho"
+path="res://.godot/imported/Pause_Button.png-b7a087b27882349153dce04d344c6c5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/image/guitareMap.png"
-dest_files=["res://.godot/imported/guitareMap.png-dec75a2b4ed6ca7293044aa7bbd301e0.ctex"]
+source_file="res://asset/image/Pause_Button.png"
+dest_files=["res://.godot/imported/Pause_Button.png-b7a087b27882349153dce04d344c6c5f.ctex"]
 
 [params]
 

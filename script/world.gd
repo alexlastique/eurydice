@@ -34,18 +34,17 @@ var inFight : bool = false:
 	set(value):
 		inFight = value
 		emit_signal("startFight", inFight)
-		
-var village: Node2D
-func _ready():
-	village = get_node("village")
-	remove_child(village)
-	
 
+func _ready():
+	var scene = preload("res://scene/village.tscn")
+	current_world = scene.instantiate()
+	
+var current_world;
 func _on_start_game(is_game_started):
 	if is_game_started:
-		add_child(village)
+		add_child(current_world)
 	else:
-		remove_child(village)
+		current_world.queue_free()
 
 func _input(event : InputEvent):
 	if event.is_action_pressed("ui_home") and !optionsOpen and inGame:

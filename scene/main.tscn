@@ -1,7 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://gvahboxykdv1"]
+[gd_scene load_steps=17 format=3 uid="uid://gvahboxykdv1"]
 
 [ext_resource type="Script" path="res://script/world.gd" id="1_838lq"]
-[ext_resource type="PackedScene" uid="uid://dhuxmcmfd05d8" path="res://scene/village.tscn" id="2_1evld"]
 [ext_resource type="Script" path="res://script/ath.gd" id="8_7jwdo"]
 [ext_resource type="Theme" uid="uid://d2winwbx7no1c" path="res://asset/new_theme.tres" id="8_f3u34"]
 [ext_resource type="PackedScene" uid="uid://72dqvj3wq7oy" path="res://scene/menu.tscn" id="9_2csx5"]
@@ -65,8 +64,6 @@ animations = [{
 process_mode = 3
 script = ExtResource("1_838lq")
 
-[node name="village" parent="." instance=ExtResource("2_1evld")]
-
 [node name="ath" type="CanvasLayer" parent="."]
 process_mode = 1
 script = ExtResource("8_7jwdo")
@@ -110,7 +107,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="combat" parent="CanvasLayer" node_paths=PackedStringArray("world") instance=ExtResource("15_8hbom")]
+[node name="Combat" parent="CanvasLayer" node_paths=PackedStringArray("world") instance=ExtResource("15_8hbom")]
+process_mode = 1
 world = NodePath("../..")
 
 [node name="PauseMenu" parent="CanvasLayer" node_paths=PackedStringArray("world") instance=ExtResource("12_6ptdj")]
@@ -125,7 +123,7 @@ world = NodePath("../..")
 [connection signal="openOptions" from="." to="CanvasLayer/PauseMenu" method="_on_main_open_options"]
 [connection signal="openOptions" from="." to="CanvasLayer/Menu" method="_on_main_open_options"]
 [connection signal="openOptions" from="." to="CanvasLayer/options_menu" method="_on_main_open_options"]
-[connection signal="startFight" from="." to="CanvasLayer/combat" method="_on_main_start_fight"]
+[connection signal="startFight" from="." to="CanvasLayer/Combat" method="_on_main_start_fight"]
 [connection signal="startGame" from="." to="." method="_on_start_game"]
 [connection signal="startGame" from="." to="ath" method="_on_main_start_game"]
 [connection signal="startGame" from="." to="CanvasLayer/Menu" method="_on_main_start_game"]

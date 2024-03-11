@@ -50,7 +50,7 @@ animations = [{
 radius = 14.0
 height = 64.0
 
-[node name="Ghost" type="CharacterBody2D"]
+[node name="Ghost" type="CharacterBody2D" groups=["mob"]]
 z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_d7v6y")

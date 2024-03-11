@@ -1,20 +1,17 @@
 extends CharacterBody2D
 
+@onready var main = get_node("/root/main")
+@onready var combat = get_node("/root/main/CanvasLayer/Combat")
 @onready var navigation_agent : NavigationAgent2D = $NavigationAgent2D
 var moovspeed = 500
 var vel
-var combat
 
 func _ready():
 	$Camera2D.position = position
 	$AnimatedSprite2D.play()
-
-
-func _on_fantome_toggle_comabt(is_Combat):
-	combat = is_Combat
 	
 func _physics_process(delta):
-	if (!combat):
+	if (!main.inFight):
 		vel = Vector2()
 		velocity = vel
 
@@ -49,4 +46,6 @@ func _physics_process(delta):
 			$AnimatedSprite2D.animation = "default"
 
 func _on_area_2d_body_entered(body):
-	print_debug(body.name)
+	if body.is_in_group("mob"):
+		combat.mob = body
+		main.inFight = true;
