@@ -13,3 +13,4 @@ res://script/combat.gd
 res://script/player.gd
 res://script/Ghost.gd
 res://script/musiqueGame.gd
+res://script/pause_menu.gd

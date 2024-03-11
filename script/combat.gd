@@ -7,7 +7,7 @@ var mob
 func _ready():
 	hide()
 	$player.play("default")
-	
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -17,7 +17,6 @@ func _on_main_start_fight(is_in_fight):
 	if is_in_fight:
 		show()
 		$mob.play(mob.name)
-		print_debug(mob.name)
 	else:
 		hide()
 

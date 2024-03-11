@@ -34,16 +34,18 @@ var inFight : bool = false:
 	set(value):
 		inFight = value
 		emit_signal("startFight", inFight)
-
+		
+var scene
 func _ready():
-	var scene = preload("res://scene/village.tscn")
-	current_world = scene.instantiate()
+	scene = preload("res://scene/village.tscn")
 	
 var current_world;
 func _on_start_game(is_game_started):
 	if is_game_started:
+		current_world = scene.instantiate()
 		add_child(current_world)
 	else:
+		inFight = false
 		current_world.queue_free()
 
 func _input(event : InputEvent):
