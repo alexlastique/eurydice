@@ -1,5 +1,5 @@
-CanvasLayer
 NavigationRegion2D
+CanvasLayer
 Camera2D
 Sprite2D
 CollisionShape2D

@@ -37,7 +37,7 @@ var inFight : bool = false:
 		
 var scene
 func _ready():
-	scene = preload("res://scene/village.tscn")
+	scene = preload("res://scene/dongeon.tscn")
 	
 var current_world;
 func _on_start_game(is_game_started):
