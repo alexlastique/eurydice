@@ -8,9 +8,7 @@ res://scene/pause_menu.tscn
 res://scene/options_menu.tscn
 res://scene/dongeon.tscn
 res://scene/village.tscn
-res://script/world.gd
 res://script/combat.gd
-res://script/player.gd
+res://script/cercle.gd
 res://script/Ghost.gd
 res://script/musiqueGame.gd
-res://script/pause_menu.gd

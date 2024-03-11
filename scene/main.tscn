@@ -8,7 +8,7 @@
 [ext_resource type="FontFile" uid="uid://01x17hllpvfv" path="res://asset/PixelGameFont.ttf" id="11_u3g7u"]
 [ext_resource type="PackedScene" uid="uid://b2cpqeyyfr5e8" path="res://scene/pause_menu.tscn" id="12_6ptdj"]
 [ext_resource type="PackedScene" uid="uid://cgfpjoak248yt" path="res://scene/combat.tscn" id="15_8hbom"]
-[ext_resource type="PackedScene" uid="uid://bj0imulat1001" path="res://scene/options_menu.tscn" id="15_234vm"]
+[ext_resource type="PackedScene" uid="uid://crius772ncji1" path="res://scene/options_menu.tscn" id="15_234vm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xqqhu"]
 atlas = ExtResource("9_sq2ig")

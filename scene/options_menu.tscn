@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bj0imulat1001"]
+[gd_scene load_steps=5 format=3 uid="uid://crius772ncji1"]
 
 [ext_resource type="Script" path="res://script/options_menu.gd" id="1_rxkhb"]
 [ext_resource type="Script" path="res://script/Options.gd" id="2_axryn"]
