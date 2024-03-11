@@ -1,18 +1,18 @@
 extends Control
 
-var i = 0
+var j = 0
 var presse
 
 func _process(delta):
-	i += delta
-	if i >=0.74 and presse:
+	j += delta
+	if j >=0.74 and presse:
 		$AudioStreamPlayer2D.play()
 		presse = false
 	elif !presse:
-		i = 0
+		j = 0
 
 func _on_button_pressed():
-	i = 0
+	j = 0
 	presse = true
 	for i in range(6):
 		var bleu = RigidBody2D.new()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bfx3yaw2a6uab"]
+[gd_scene load_steps=9 format=3 uid="uid://by5k8ocu6hkxp"]
 
 [ext_resource type="Texture2D" uid="uid://jfmboeq4getq" path="res://asset/image/volcanoe_tiles.png" id="1_678pc"]
 [ext_resource type="PackedScene" uid="uid://cbw1fr1ssv1ex" path="res://scene/player.tscn" id="2_kwbxn"]
@@ -9304,7 +9304,7 @@ layer_3/tile_data = PackedInt32Array(851988, 1507328, 131085, 917524, 1507328, 6
 
 [node name="player" parent="." instance=ExtResource("2_kwbxn")]
 visibility_layer = 512
-position = Vector2(1517, 1838)
+position = Vector2(3469, 1092)
 script = ExtResource("3_4g8lu")
 
 [node name="Camera2D" type="Camera2D" parent="player"]

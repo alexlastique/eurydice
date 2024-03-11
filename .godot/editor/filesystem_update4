@@ -1,3 +1,8 @@
-res://scene/dongeon.tscn
+res://scene/player.tscn
 res://asset/new_theme.tres
+res://scene/pnj.tscn
+res://scene/menu.tscn
+res://scene/pause_menu.tscn
+res://scene/combat.tscn
 res://scene/main.tscn
+res://scene/dongeon.tscn
