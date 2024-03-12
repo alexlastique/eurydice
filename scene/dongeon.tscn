@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://by5k8ocu6hkxp"]
+[gd_scene load_steps=11 format=3 uid="uid://by5k8ocu6hkxp"]
 
 [ext_resource type="Texture2D" uid="uid://jfmboeq4getq" path="res://asset/image/volcanoe_tiles.png" id="1_678pc"]
 [ext_resource type="PackedScene" uid="uid://cbw1fr1ssv1ex" path="res://scene/player.tscn" id="2_kwbxn"]
 [ext_resource type="Texture2D" uid="uid://dlpsumvc0sqj3" path="res://asset/image/volcanoe_assets.png" id="2_vj3ru"]
+[ext_resource type="Script" path="res://script/transition.gd" id="4_3qxdy"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_svrb2"]
-vertices = PackedVector2Array(302, 516, 304, 530, 159, 530, 156, 515, 141, 407, 150, 394, 262, 410, 316, 136, 315, 123, 452, 123, 452, 143, 450, 161, 605, 141, 657, 171, 479, 175, 479, 161, 550, 141, 452, 337, 316, 336, 317, 276, 653, 10, 658, 10, 653, 124, 231, 138, 259, 140, 258, 153, 253, 178, 228, 178, 185, 171, 250, 274, 250, 235, 254, 235, 86, 362, 134, 362, 134, 378, 114, 376, 78, 369, 262, 394, 294, 410, 294, 425, 310, 458, 326, 458, 326, 490, 390, 506, 406, 506, 406, 538, 394, 523, 419, 538, 419, 582, 396, 582, 372, 498, 390, 491, 337, 490, 326, 497, 45, 257, 29, 257, 29, 250, 51, 255, 300, 155, 300, 136, 479, 132, 479, 130, 548, 130, 186, 123, 229, 123, 54, 282, 70, 283, 70, 330, 45, 335, 310, 426, 606, 125, 224, 209, 141, 209, 140, 195, 136, 189, 138, 170, 116, 195, 110, 189, 109, 249, 113, 255, 75, 339, 82, 330, 111, 396, 150, 387, 148, 378, 86, 331, 141, 510, 319, 516, 214, 250, 228, 250, 228, 273, 142, 273, 142, 235, 214, 235)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), PackedInt32Array(7, 8, 9, 10, 11), PackedInt32Array(12, 13, 14, 15, 16), PackedInt32Array(11, 17, 18, 19), PackedInt32Array(20, 21, 13, 22), PackedInt32Array(23, 24, 25, 26, 27, 28), PackedInt32Array(29, 30, 31, 19), PackedInt32Array(32, 33, 34, 35, 36), PackedInt32Array(5, 37, 6), PackedInt32Array(6, 38, 39), PackedInt32Array(40, 41, 42, 0), PackedInt32Array(43, 44, 45, 46), PackedInt32Array(45, 47, 48, 49), PackedInt32Array(45, 49, 46), PackedInt32Array(43, 46, 50), PackedInt32Array(51, 43, 50), PackedInt32Array(52, 51, 50, 53, 42), PackedInt32Array(54, 55, 56, 57), PackedInt32Array(19, 58, 59, 7, 11), PackedInt32Array(60, 61, 62), PackedInt32Array(28, 63, 64, 23), PackedInt32Array(65, 66, 67, 68), PackedInt32Array(39, 69, 40, 0), PackedInt32Array(70, 22, 13, 12), PackedInt32Array(27, 71, 72, 73, 28), PackedInt32Array(74, 75, 28, 73), PackedInt32Array(10, 60, 62, 16, 15, 11), PackedInt32Array(58, 19, 31, 26, 25), PackedInt32Array(74, 73, 76, 77), PackedInt32Array(78, 77, 76, 79), PackedInt32Array(78, 79, 57, 56), PackedInt32Array(54, 57, 65, 68), PackedInt32Array(80, 68, 67, 81), PackedInt32Array(4, 82, 35, 34, 83, 5), PackedInt32Array(34, 84, 83), PackedInt32Array(80, 81, 85, 32, 36), PackedInt32Array(3, 86, 4), PackedInt32Array(0, 6, 39), PackedInt32Array(0, 42, 53, 87), PackedInt32Array(88, 89, 90, 91), PackedInt32Array(88, 91, 92, 93)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(384, 527, 387.143, 591.714, 430, 592.571, 428.857, 529.286, 416.857, 527.714, 415.714, 495.571, 400.571, 494.714, 399, 481.571, 337, 479.714, 335.857, 448.714, 321.143, 446.714, 319.571, 418, 304.429, 415.714, 304, 398.571, 274.286, 397.429, 271.429, 381.857, 158.571, 382.286, 156.286, 368, 145.143, 367.143, 143.857, 352.143, 96.5714, 350.857, 95.8571, 323.143, 80.2857, 319.143, 79.5714, 274.571, 62.8571, 272.571, 62, 264.714, 122.857, 265.857, 125.714, 204.714, 131.143, 204.714, 132, 218.571, 234.143, 219.714, 236.571, 188.429, 243.286, 188.429, 244.429, 224.571, 132, 225, 132, 282.571, 306.857, 285.714, 306.429, 345.714, 462.571, 348.143, 460.286, 171.286, 469.429, 171.286, 469.429, 185.571, 667.286, 180.857, 668.714, -2.97378e-13, 643, 0.714286, 643.286, 114, 596.857, 115.571, 596, 130.714, 557.571, 131.429, 556.286, 120, 469.286, 120, 469.286, 124.714, 461.714, 127.857, 461.714, 112.857, 303.571, 112.857, 304.714, 125.571, 290.429, 126.286, 289.714, 145, 268.571, 143.714, 269.857, 131, 239.571, 128.714, 238, 113.571, 176.857, 112.857, 175.286, 160.857, 128.714, 160.429, 127.143, 178.714, 99.7143, 179.143, 99.2857, 239.143, 20.2857, 241.143, 18.7143, 267.429, 35.4286, 266.571, 35.4286, 344.429, 66, 347.571, 69.5714, 377.857, 103.286, 383.857, 99.7143, 403.286, 130.714, 414, 131.571, 517.714, 146.571, 523.286, 149.857, 539.571, 315.571, 540.429, 313.571, 526, 325.857, 526, 332.571, 506.571, 367.143, 508.143), PackedVector2Array(172.571, 427.429, 171, 464.714, 187.857, 465.857, 189, 481, 204.286, 483.286, 206.571, 493.429, 273.286, 497.429, 275, 443.714, 246.143, 442.571, 243.857, 429)])
+vertices = PackedVector2Array(258, 153, 300, 155, 365, 177, 322, 178, 253, 178, 176, 176, 185, 171, 316, 336, 367, 273, 373, 270, 413, 270, 452, 337, 322, 498, 323, 515, 306, 515, 286, 507, 286, 436, 414, 221, 450, 161, 413, 226, 413, 178, 372, 178, 369, 208, 365, 204, 317, 276, 325, 271, 364, 242, 369, 243, 387, 221, 385, 226, 605, 141, 657, 170, 479, 169, 480, 161, 550, 141, 316, 136, 315, 123, 452, 123, 452, 143, 386, 243, 349, 228, 349, 223, 350, 205, 653, 10, 659, 10, 653, 124, 231, 138, 259, 140, 387, 208, 349, 242, 86, 362, 134, 362, 134, 378, 108, 372, 150, 394, 262, 394, 262, 410, 252, 419, 163, 419, 141, 405, 294, 410, 294, 425, 253, 433, 310, 458, 326, 458, 326, 490, 390, 506, 406, 506, 406, 538, 394, 523, 419, 538, 419, 582, 396, 582, 375, 499, 390, 491, 337, 490, 310, 426, 198, 507, 306, 530, 159, 530, 156, 515, 195, 494, 181, 494, 45, 257, 29, 257, 29, 250, 51, 255, 300, 136, 479, 132, 479, 130, 548, 130, 186, 123, 229, 123, 254, 274, 254, 225, 321, 224, 54, 282, 70, 283, 70, 330, 606, 125, 150, 387, 108, 402, 164, 477, 179, 478, 141, 510, 148, 378, 78, 368, 86, 331, 75, 339, 82, 330, 45, 335, 323, 216, 228, 178, 224, 209, 172, 202, 141, 209, 147, 206, 140, 195, 147, 176, 138, 170, 136, 189, 116, 195, 110, 189, 109, 249, 113, 255)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), PackedInt32Array(7, 8, 9, 10, 11), PackedInt32Array(12, 13, 14, 15, 16), PackedInt32Array(17, 18, 11, 10, 19), PackedInt32Array(18, 17, 20), PackedInt32Array(21, 22, 23, 2), PackedInt32Array(8, 7, 24, 25), PackedInt32Array(9, 8, 26, 27), PackedInt32Array(28, 17, 19, 29), PackedInt32Array(30, 31, 32, 33, 34), PackedInt32Array(35, 36, 37, 38, 18, 20, 21, 2), PackedInt32Array(23, 22, 29, 39, 27, 26, 40, 41, 42), PackedInt32Array(43, 44, 31, 45), PackedInt32Array(46, 47, 0, 6), PackedInt32Array(22, 48, 28, 29), PackedInt32Array(26, 49, 40), PackedInt32Array(50, 51, 52, 53), PackedInt32Array(54, 55, 56, 57, 58, 59), PackedInt32Array(56, 60, 61, 16, 62, 57), PackedInt32Array(63, 64, 65), PackedInt32Array(66, 67, 68, 69), PackedInt32Array(68, 70, 71, 72), PackedInt32Array(68, 72, 69), PackedInt32Array(66, 69, 73), PackedInt32Array(74, 66, 73), PackedInt32Array(75, 74, 73, 12, 65), PackedInt32Array(65, 12, 16, 63), PackedInt32Array(76, 63, 16, 61), PackedInt32Array(77, 15, 14, 78, 79, 80), PackedInt32Array(81, 77, 80, 82), PackedInt32Array(83, 84, 85, 86), PackedInt32Array(1, 87, 35, 2), PackedInt32Array(33, 88, 89, 90, 34), PackedInt32Array(6, 91, 92, 46), PackedInt32Array(25, 24, 93, 94, 95), PackedInt32Array(96, 97, 98), PackedInt32Array(99, 45, 31, 30), PackedInt32Array(100, 54, 59, 101, 53, 52), PackedInt32Array(38, 88, 33, 18), PackedInt32Array(102, 103, 82, 80, 104), PackedInt32Array(102, 104, 59, 58), PackedInt32Array(52, 105, 100), PackedInt32Array(50, 53, 106), PackedInt32Array(107, 50, 106, 108, 109), PackedInt32Array(98, 109, 108, 110), PackedInt32Array(98, 110, 83, 96), PackedInt32Array(86, 96, 83), PackedInt32Array(41, 40, 95, 111), PackedInt32Array(111, 95, 94, 4, 3), PackedInt32Array(5, 4, 112), PackedInt32Array(5, 112, 113, 114), PackedInt32Array(114, 113, 115, 116), PackedInt32Array(116, 115, 117, 118), PackedInt32Array(119, 6, 5, 118), PackedInt32Array(120, 119, 118, 117), PackedInt32Array(120, 117, 121, 122), PackedInt32Array(123, 122, 121, 124), PackedInt32Array(123, 124, 86, 85)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(384, 527, 387.143, 591.714, 430, 592.571, 428.857, 529.286, 416.857, 527.714, 415.714, 495.571, 400.571, 494.714, 399, 481.571, 337, 479.714, 335.857, 448.714, 321.143, 446.714, 319.571, 418, 304.429, 415.714, 304, 398.571, 274.286, 397.429, 271.429, 381.857, 158.571, 382.286, 156.286, 368, 145.143, 367.143, 143.857, 352.143, 96.5714, 350.857, 95.8571, 323.143, 80.2857, 319.143, 79.5714, 274.571, 62.8571, 272.571, 62, 264.714, 122.857, 265.857, 125.714, 204.714, 131.143, 204.714, 132, 218.571, 234.143, 219.714, 236.571, 188.429, 243.286, 188.429, 244.429, 224.571, 244, 283.857, 306.857, 285.714, 306.429, 345.714, 462.571, 348.143, 460.286, 171.286, 469.429, 171.286, 467.571, 178.857, 667.286, 180.857, 668.714, -2.97378e-13, 643, -0.142858, 643.286, 114, 596.857, 115.571, 596, 130.714, 557.571, 131.429, 556.286, 120, 469.286, 120, 469.286, 124.714, 461.714, 127.857, 461.714, 112.857, 303.571, 112.857, 304.714, 125.571, 290.429, 126.286, 289.714, 145, 268.571, 143.714, 269.857, 131, 239.571, 128.714, 238, 113.571, 176.857, 112.857, 175.286, 160.857, 128.714, 160.429, 127.143, 178.714, 99.7143, 179.143, 99.2857, 239.143, 20.2857, 241.143, 18.7143, 267.429, 35.4286, 266.571, 35.4286, 344.429, 66, 347.571, 69.5714, 377.857, 98.2857, 381, 99.2857, 412.429, 130.714, 414, 131.571, 517.714, 146.571, 523.286, 149.857, 539.571, 315.571, 540.429, 316, 524.571, 333.857, 524.571, 333.143, 508.143, 370.286, 509), PackedVector2Array(172.857, 428.857, 243, 428.571, 243.714, 443.143, 276, 445.429, 276, 496.857, 206.286, 497, 203.286, 484.143, 189.857, 483.714, 189.143, 468.714, 173.714, 467.714), PackedVector2Array(156.714, 193.571, 156.714, 185.571, 163.571, 186.429, 163.429, 192.857), PackedVector2Array(331.714, 236.429, 338.714, 237, 339.429, 251.857, 355.143, 251.571, 355.857, 261.714, 333.714, 260.571), PackedVector2Array(381, 188.429, 403.429, 188, 403.857, 211, 397.286, 211.143, 397.143, 198.143, 380.286, 197.571), PackedVector2Array(396, 235.714, 403.286, 235.857, 403.286, 260.429, 381.857, 259.857, 381.286, 253.286, 396.714, 252.571), PackedVector2Array(339.857, 210.429, 332.714, 208.286, 332.143, 187.714, 355.286, 187.429, 355.429, 195.429, 340.857, 196.571)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yplwg"]
@@ -9276,13 +9277,14 @@ sources/1 = SubResource("TileSetAtlasSource_fnx0i")
 size = Vector2(10.3572, 36.6428)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vxqr3"]
-size = Vector2(170.25, 53)
+size = Vector2(170.25, 79.5)
 
-[node name="Dongeon" type="Node2D"]
+[node name="dongeon" type="Node2D"]
+script = ExtResource("4_3qxdy")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 y_sort_enabled = true
-position = Vector2(2.08165e-12, 2.08165e-12)
+position = Vector2(35, 49)
 scale = Vector2(7, 7)
 navigation_polygon = SubResource("NavigationPolygon_svrb2")
 
@@ -9311,7 +9313,7 @@ light_mask = 3
 visibility_layer = 515
 z_index = 2
 y_sort_enabled = false
-position = Vector2(2855, 3967)
+position = Vector2(2880, 4080)
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
@@ -9355,13 +9357,14 @@ priority = 3
 position = Vector2(208, 258.571)
 shape = SubResource("RectangleShape2D_d2jr6")
 
-[node name="transition" type="Area2D" parent="."]
+[node name="transition to village" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="transition"]
-position = Vector2(4588, 15)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transition to village"]
+position = Vector2(4630, 89)
 shape = SubResource("RectangleShape2D_vxqr3")
 
-[connection signal="body_entered" from="Area2D" to="player" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Area2D2" to="player" method="_on_area_2d_2_body_entered"]
-[connection signal="body_entered" from="Area2D3" to="player" method="_on_area_2d_3_body_entered"]
-[connection signal="body_entered" from="Area2D4" to="player" method="_on_area_2d_4_body_entered"]
+[connection signal="body_entered" from="Area2D" to="player" method="_on_area_2d_body_entered_hide"]
+[connection signal="body_entered" from="Area2D2" to="player" method="_on_area_2d_body_entered_show"]
+[connection signal="body_entered" from="Area2D3" to="player" method="_on_area_2d_body_entered_hide"]
+[connection signal="body_entered" from="Area2D4" to="player" method="_on_area_2d_body_entered_show"]
+[connection signal="body_entered" from="transition to village" to="." method="_on_transition_to_village_body_entered"]

@@ -7,7 +7,6 @@ var moovspeed = 500
 var vel
 
 func _ready():
-	$Camera2D.position = position
 	$AnimatedSprite2D.play()
 	
 func _physics_process(delta):
@@ -49,3 +48,12 @@ func _on_area_2d_body_entered(body):
 	if body.is_in_group("mob"):
 		combat.mob = body
 		main.inFight = true;
+
+
+func _on_area_2d_body_entered_hide(body):
+	if body.name=="player":
+		hide()
+
+func _on_area_2d_body_entered_show(body):
+	if body.name=="player":
+		show()

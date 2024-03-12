@@ -37,7 +37,7 @@ var inFight : bool = false:
 		
 var scene
 func _ready():
-	scene = preload("res://scene/dongeon.tscn")
+	scene = preload("res://scene/village.tscn")
 	
 var current_world;
 func _on_start_game(is_game_started):
@@ -47,6 +47,16 @@ func _on_start_game(is_game_started):
 	else:
 		inFight = false
 		current_world.queue_free()
+
+func _change_map(destination_world : String):
+	current_world.queue_free()
+	var scene_futur
+	if destination_world=="village":
+		scene_futur = preload("res://scene/village.tscn")
+	if destination_world=="dongeon":
+		scene_futur = preload("res://scene/dongeon.tscn")
+	current_world = scene_futur.instantiate()
+	add_child(current_world)
 
 func _input(event : InputEvent):
 	if event.is_action_pressed("ui_home") and !optionsOpen and inGame:

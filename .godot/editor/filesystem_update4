@@ -8,3 +8,5 @@ res://scene/player.tscn
 res://scene/pause_menu.tscn
 res://scene/options_menu.tscn
 res://scene/village.tscn
+res://script/player.gd
+res://script/transition.gd
